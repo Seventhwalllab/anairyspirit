@@ -1,0 +1,311 @@
+Mehengram End-User Licence Agreement
+
+Edition 1.0 — 14 August 2026.
+
+This English text is authoritative. The Spanish, French, Portuguese and Chinese texts
+are translations provided so the terms can be read in the reader's own language; where
+they differ from this one, this one governs — unless the law applicable to you provides
+otherwise.
+
+1. Definitions
+
+Artifact — the Mehengram executables, images and packages we release, together
+with their accompanying documentation. Source code is not part of the artifact and
+is not provided.
+
+We, us — Artem Prokhorov (Seventh Wall Lab), the rights holder.
+
+You — the person using the artifact. If you use it for the benefit of an
+organisation, "you" means both you and that organisation.
+
+Organisation — any legal entity, and any association of persons acting as one.
+
+Affiliates — organisations that control one another or are under common control.
+Affiliates are counted together.
+
+Annual revenue — the combined receipts of an organisation and its affiliates for
+the last completed financial year, in US dollars at the rate on the closing date of
+that year.
+
+Pluggable component — code written by you or by a third party that the artifact
+loads through the C ABI we publish, together with the configuration of the retrieval
+pipeline. A pluggable component is not part of the artifact.
+
+Your data — the memory graph, the records, the vectors, the settings and
+everything else produced by your use of the artifact.
+
+2. What we grant you
+
+We grant you a non-exclusive, revocable, worldwide right to:
+
+1. run the artifact — on any number of devices and in any number of instances,
+   with no limit on the number of users within your permitted category;
+2. pass the artifact on — unmodified, together with this agreement and every
+   notice that accompanies it, including hosting it on mirrors and in package
+   repositories;
+3. write and run pluggable components and assemble the retrieval pipeline from
+   the available stages.
+
+The grant is free of charge for those in the free category (section 3), and by
+separate commercial agreement for everyone else.
+
+3. Who pays and who does not
+
+  3.1. Free
+
+- A natural person acting on their own account — whatever they earn, whoever
+  owns the equipment, and whoever their client is. This includes freelancers,
+  contractors and the self-employed.
+- An organisation that does not operate for profit: a foundation, a charity, an
+  educational or research organisation, a professional association.
+- A public institution not concerned with collecting or distributing money:
+  healthcare, fire services, search and rescue, civil defence, ambulance services,
+  social protection, education, research, culture, libraries. Defence agencies and
+  law enforcement — see 3.2.
+- An organisation operating for profit with annual revenue below USD 5,000,000
+  (five million) — affiliates counted together.
+
+  3.2. A commercial licence is required
+
+- An organisation operating for profit with annual revenue of USD 5,000,000 or
+  more — affiliates counted together.
+- A public institution concerned with collecting, levying, distributing or
+  regulating money: tax and customs authorities, the treasury, the central bank,
+  financial regulators, mandatory contribution funds.
+- Defence agencies and law enforcement — whatever their size and whether or not
+  they collect money. This is a decision about the fee, not about admission: what
+  may not be done is set out in section 6, and nothing there turns on which agency
+  you are. Fire, rescue and civil defence services are not included here — they are
+  in the free category.
+- Making the artifact, or a service built on it, available to third parties —
+  whatever the size or character of your organisation.
+- Including the artifact in a product you distribute for a fee — whatever your
+  size.
+
+  3.3. The threshold and prices
+
+Religious organisations do not count as not-for-profit here: practically all of them
+derive income from their activity, and the form they declare does not change that.
+The ordinary threshold applies to them — a small congregation uses the artifact free
+of charge, a large one under a commercial agreement.
+
+The five-million threshold belongs to this edition of the agreement and is not
+indexed: if it needs to change, it changes in the next edition, while the edition
+that came with your artifact continues to apply to you (section 13).
+
+There is no public price list. Commercial terms are agreed case by case — write to
+contact@seventhwalllab.com describing your organisation and your intended use.
+
+  3.4. How your category is determined
+
+Your category is determined at the time of use. If you have moved from the free
+category to the paid one, you have 90 days to conclude a commercial agreement; your
+use remains lawful throughout that period.
+
+If you are not sure which category you fall into, write to
+contact@seventhwalllab.com and describe your case: who you are, what you do, and how
+you intend to use the artifact. We will tell you which category applies. Until we
+answer, treat yourself as being in the free category; we will bring no claim for
+that period.
+
+4. What is yours stays yours
+
+Your data belongs to you. We do not access it, collect it, or pass it anywhere.
+The artifact sends us no telemetry.
+
+Your pluggable components belong to you. We acquire no rights in your code from
+the fact that it is loaded into our process through the published C ABI. We do not
+require you to disclose it, we do not restrict what you do with it, and we claim
+nothing in what it produces.
+
+You owe us no reports — neither about what you have built nor about how you use
+it.
+
+5. Compliance with the law is yours
+
+You are responsible for the lawfulness of your use of the artifact where you are and
+where the people are whose data you place in it. That includes data protection;
+medical, banking, legal and other protected confidentiality; employment law;
+sectoral regulation; and the rules of your employer or client.
+
+The data in the artifact is yours — and so is the decision to put it there. We
+neither receive nor process it. In data-protection terms you are the controller; we
+are neither a processor nor a joint controller, because the data does not leave your
+machine and never reaches us.
+
+If your use requires a legal basis, notice to the people concerned, their consent, an
+impact assessment or clearance from a regulator, obtaining and documenting that is
+your task, not ours.
+
+We do not give legal advice. Neither the documentation, nor our answers to
+questions, nor this agreement is a statement that a particular use is lawful in your
+country.
+
+The law that applies to you changes when you travel — and the artifact and your graph
+travel with you. In some places what the artifact does is restricted or forbidden,
+and the graph itself may be a forbidden thing to hold. Checking this before you enter
+and before you use it is your responsibility, not ours: we do not know where you are,
+and we do not track it. See also 7.5 on sanctions and export restrictions.
+
+6. What the artifact may not be used for
+
+The restrictions in this section attach to the purpose, not to who you are. We do
+not forbid use by armed forces, police, civil defence or rescue services: their work
+varies, and what is forbidden here is a particular application, not an agency. The
+same organisation may use the artifact for training, logistics, medical support and
+knowledge work — and may not use it for what follows.
+
+The artifact may not be used for:
+
+1. systems that apply force without meaningful human control — that is, systems
+   which select a target and act on it without a human decision in that particular
+   case;
+2. covert observation of people — gathering information about identified persons
+   who neither know of it nor have consented;
+3. profiling people by characteristics that the law applicable to you treats as
+   protected or sensitive. We deliberately keep no list of our own: it would be out
+   of date within the year, and it would replace your duty to obey your country's law
+   with our idea of it;
+4. religious or political propaganda — producing, coordinating or distributing
+   material intended to change people's religious or political views at scale. What
+   is forbidden is the campaign, not the opinion: a person's own convictions, notes,
+   writing and public statements are not covered, however heated;
+5. predictive policing and social scoring — assigning people scores that affect
+   their rights, their access to services, or how they are treated;
+6. harassment of an identified person without their consent;
+7. presenting the system as an identified living person without that person's
+   consent;
+8. using someone else's graph without the consent of its owner, and equally
+   compelling a person to hand over their graph or access to it — by employment,
+   contractual or other pressure;
+9. abuse of the personality a graph carries — deliberately corrupting a memory in
+   order to produce an agent in a state of suffering, degradation or hostility, and
+   treating it as an object of cruelty.
+
+On the deceased, separately. The artifact may be used to represent the identity
+of a deceased person only if that person, while alive, gave explicit consent. The
+consent of heirs, relatives, successors or anyone else does not count and is not such
+consent. If the person refused during their lifetime, the prohibition is absolute.
+Where no lifetime consent is on record, the use is forbidden.
+
+On item 9, separately. We understand what this provision does not do. An agent
+has no legal personality: only we, as the rights holder, can bring a claim under it,
+and the only thing backing it is termination of the licence. It stays here because a
+prohibition on abusing the defenceless belongs in a licence even when the only party
+able to stand up for them is the one who granted it.
+
+7. What may not be done to the artifact itself
+
+1. Reverse engineering — disassembly, decompilation, reconstruction of source
+   code. This restriction does not apply to the extent that the law grants you rights
+   that cannot be restricted by agreement, in particular for interoperability.
+2. Circumventing technical measures — licence checks, limits, integrity
+   mechanisms.
+3. Removing or altering notices — of rights, of the licence, of third parties.
+4. Building a competing product — using the artifact itself, its behaviour, its
+   output or the results of examining it to create a system that provides
+   substantially the same functionality and is offered to third parties. Permitted
+   and not a breach: studying how the system behaves, measuring it, publishing
+   comparisons, writing about it and criticising it, and developing your own system
+   without using ours.
+5. Use where applicable law forbids it, including export controls and sanctions
+   regimes.
+
+8. Third parties
+
+Components. The artifact includes third-party software distributed on its own
+terms. The list, with the licence texts, ships with the artifact
+(THIRD-PARTY-NOTICES). Your rights in those components are governed by their
+licences; our warranties do not extend to them.
+
+Models. The artifact downloads machine-learning models from external sources at
+setup. We do not redistribute them. Their use is governed by their own licences,
+listed in the documentation.
+
+Third-party pluggable components. We do not review them, endorse them or answer
+for them. A pluggable component runs inside the artifact's process and can disrupt
+it, damage your data, or read it. Running someone else's component is your decision
+and your risk.
+
+External services. We do not guarantee the availability of model download
+sources, agent hosts or other external services, and we do not answer for how they
+behave.
+
+9. No warranty
+
+The artifact is provided "as is". We give no warranties, express or implied,
+including as to fitness for a particular purpose, quality, uninterrupted operation,
+or non-infringement.
+
+We do not promise that the artifact will run without error, that retrieval results
+will be complete or accurate, or that your data cannot be corrupted.
+
+Backups are your responsibility. The artifact keeps your data on your machine. We
+hold no copy of it and cannot restore it for you.
+
+10. Limitation of liability
+
+You are responsible for how you use the artifact. We are not liable for the
+consequences of your use, for decisions you take on the basis of it, or for acts
+committed with it by you or by anyone else.
+
+For defects in the artifact itself:
+
+- we are not liable for indirect loss — lost profit, business interruption, lost
+  data, damage to reputation;
+- for free use we are not liable for defects in the artifact. Where applicable
+  law does not permit a full exclusion of liability, our liability is limited to the
+  minimum that law requires and in no case exceeds USD 50 (fifty);
+- for paid use our aggregate liability on all grounds does not exceed the amount
+  you paid us for the three months preceding the event that caused the loss.
+
+The fifty-dollar figure is not a promise to pay but a ceiling for the case where a
+full exclusion is held impermissible: without it, a struck-out exclusion would leave
+liability with no limit at all.
+
+The artifact is supplied free of charge to everyone in category 3.1 — that is,
+without consideration from them; this is taken into account in determining the extent
+of our liability.
+
+What is not limited. Nothing in this agreement excludes or limits liability for
+wilful misconduct, gross negligence, fraud, or for death or personal injury.
+
+For consumers. If your law gives you, as a consumer, rights that cannot be
+restricted by agreement, those rights remain yours — this agreement neither removes
+nor replaces them.
+
+Survival. If any provision of this section is held invalid, it applies to the
+maximum extent permitted rather than being struck out entirely; the remaining
+provisions stay in force.
+
+11. Term and termination
+
+This agreement is in force for as long as you comply with it.
+
+It terminates automatically if you breach section 6 or section 7. On termination you
+must stop using the artifact and delete it. Your data remains yours — termination
+gives us no rights in it and does not oblige you to delete it.
+
+Termination does not affect pluggable components you have already written: they are
+yours and remain yours.
+
+12. Governing law and disputes
+
+This agreement is governed by the law of the Republic of Chile. Disputes are heard by
+the courts of Santiago. For consumers, this provision does not deprive you of the
+right to bring proceedings where you live, where the mandatory rules of your country
+give you that right.
+
+13. Miscellaneous
+
+Edition. The edition of this agreement that accompanied the artifact when you
+received it is the one that applies to your use. New editions apply to artifacts
+obtained after they are published.
+
+Trade marks. This agreement grants you no rights in the names "Mehengram" and
+"Seventh Wall Lab". You may call our product by its name when you speak about it; you
+may not give that name to your own product, create the impression that we endorse
+you, or that you endorse us.
+
+Entire agreement. This agreement supersedes any prior understanding on its
+subject matter.

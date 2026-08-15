@@ -1,4 +1,4 @@
-# Mehengram Licence Agreement
+# Mehengram End-User Licence Agreement
 
 **Edition 1.0 — 14 August 2026.**
 

@@ -1,4 +1,4 @@
-# Contrat de licence Mehengram
+# Contrat de licence utilisateur final Mehengram
 
 **Édition 1.0 — 14 août 2026.**
 
