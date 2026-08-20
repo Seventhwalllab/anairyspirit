@@ -1,6 +1,6 @@
 # Licence texts
 
-The Mehengram End-User Licence Agreement, **Edition 1.0 (14 August 2026)**, in six
+The An Airy Spirit End-User Licence Agreement, **Edition 1.0 (20 August 2026)**, in six
 languages.
 
 Two files at the root carry it into the world. [`LICENSE`](../LICENSE) says what kind of

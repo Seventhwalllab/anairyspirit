@@ -1,8 +1,8 @@
-# Mehengram
+# An Airy Spirit
 
 **Long-term memory for AI agents. Runs on your machine.**
 
-An agent connected to Mehengram remembers across sessions: what you tried and how it
+An agent connected to An Airy Spirit remembers across sessions: what you tried and how it
 turned out, what it suggested and whether that worked, what you keep coming back to.
 The memory is a graph that grows — associations strengthen with use, unused ones fade,
 and consolidation runs in the background the way sleep does.

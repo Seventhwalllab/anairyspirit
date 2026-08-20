@@ -1,6 +1,6 @@
-# Contrato de Licença de Usuário Final do Mehengram
+# Contrato de Licença de Usuário Final do An Airy Spirit
 
-**Edição 1.0 — 14 de agosto de 2026.**
+**Edição 1.0 — 20 de agosto de 2026.**
 
 A versão em inglês é a autêntica; esta tradução para o português é fornecida para
 facilitar a leitura. Havendo divergência, prevalece o texto em inglês, salvo se a lei
@@ -10,7 +10,7 @@ aplicável a você dispuser de outro modo.
 
 ## 1. Definições
 
-**Artefato** — os executáveis, as imagens e os pacotes do Mehengram que publicamos,
+**Artefato** — os executáveis, as imagens e os pacotes do An Airy Spirit que publicamos,
 juntamente com a respectiva documentação. O código-fonte não integra o artefato e não
 é fornecido.
 
@@ -331,7 +331,7 @@ momento em que você o recebeu. As edições novas aplicam-se aos artefatos obti
 sua publicação.
 
 **Marcas.** Este contrato não lhe confere direito algum sobre as denominações
-"Mehengram" e "Seventh Wall Lab". Você pode chamar nosso produto pelo nome ao falar
+"An Airy Spirit" e "Seventh Wall Lab". Você pode chamar nosso produto pelo nome ao falar
 dele; não pode dar esse nome a produto seu, nem criar a impressão de que o
 endossamos, nem de que você nos endossa.
 

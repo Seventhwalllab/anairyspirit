@@ -1,10 +1,10 @@
-MEHENGRAM — THIRD-PARTY NOTICES
+AN AIRY SPIRIT — THIRD-PARTY NOTICES
 
-This file lists the third-party software included in the Mehengram artifact,
+This file lists the third-party software included in the An Airy Spirit artifact,
 together with the licence text and copyright notices that each of those
 licences requires to travel with a binary distribution.
 
-Mehengram itself is proprietary and is not covered by any of the licences
+An Airy Spirit itself is proprietary and is not covered by any of the licences
 below; see LICENSE. Machine-learning models are not redistributed — they are
 downloaded from their own sources at setup and carry their own terms.
 
@@ -10423,7 +10423,7 @@ NOT BUILT FROM CRATES
 ================================================================================
 
 The section above is generated from the Rust dependency graph. Three things ship
-with Mehengram that are not crates and would therefore be missed by it. They are
+with An Airy Spirit that are not crates and would therefore be missed by it. They are
 listed here by hand; when one changes, this template is where to change it.
 
 --------------------------------------------------------------------------------

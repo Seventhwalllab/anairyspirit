@@ -1,6 +1,6 @@
-# Mehengram End-User Licence Agreement
+# An Airy Spirit End-User Licence Agreement
 
-**Edition 1.0 — 14 August 2026.**
+**Edition 1.0 — 20 August 2026.**
 
 This English text is authoritative. The Spanish, French, Portuguese and Chinese texts
 are translations provided so the terms can be read in the reader's own language; where
@@ -11,7 +11,7 @@ otherwise.
 
 ## 1. Definitions
 
-**Artifact** — the Mehengram executables, images and packages we release, together
+**Artifact** — the An Airy Spirit executables, images and packages we release, together
 with their accompanying documentation. Source code is not part of the artifact and
 is not provided.
 
@@ -328,7 +328,7 @@ give you that right.
 received it is the one that applies to your use. New editions apply to artifacts
 obtained after they are published.
 
-**Trade marks.** This agreement grants you no rights in the names "Mehengram" and
+**Trade marks.** This agreement grants you no rights in the names "An Airy Spirit" and
 "Seventh Wall Lab". You may call our product by its name when you speak about it; you
 may not give that name to your own product, create the impression that we endorse
 you, or that you endorse us.
