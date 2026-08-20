@@ -1,0 +1,30 @@
+# This repository carries documents, not a build: the README, the licence, the
+# agreement in six languages and the third-party notices. So the list is short
+# and deliberately not a template — everything here is something that has
+# actually turned up in a docs repo.
+
+# macOS writes these into any folder someone opens in Finder.
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows does the same.
+Thumbs.db
+Desktop.ini
+
+# Editor leftovers. `*~` and `.swp` are what a crashed editor leaves behind, and
+# they hold the text as it was mid-edit — in a legal file that is a draft nobody
+# should read as final.
+*~
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Renders of the agreement, when someone converts it for signing or printing.
+# The .md and .txt files are the documents; a PDF beside them is a copy that
+# will drift from its source.
+*.pdf
+*.docx
