@@ -9,7 +9,10 @@ sold.
   Licence       An Airy Spirit End-User Licence Agreement, Edition 1.0 (20 August 2026)
   Full text     EULA.txt — distributed with this file, in the same place
   Translations  Spanish, French, Portuguese, traditional Chinese and Russian:
-                https://github.com/Seventhwalllab/anairyspirit/tree/main/legal
+                the `legal/` directory distributed with this file. They travel
+                with the artifact so the agreement can be read in your own
+                language without a network connection — a licence you cannot
+                reach is a licence you were not shown.
   Third party   THIRD-PARTY-NOTICES — distributed with this file: the licences and
                 copyright notices of the software linked into this artifact
   Contact       contact@seventhwalllab.com

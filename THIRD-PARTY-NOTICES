@@ -8380,7 +8380,7 @@ MIT License
 --------------------------------------------------------------------------------
 
 Applies to:
-  * h2 0.4.13
+  * h2 0.4.16
 Copyright (c) 2017 h2 authors
 
 Permission is hereby granted, free of charge, to any
@@ -10432,7 +10432,7 @@ ONNX Runtime — Microsoft
 
 The inference runtime. Version 1.19.2. The Docker image carries the shared
 library itself, so its licence travels here; on macOS and Linux installs the
-library is fetched from Microsoft during `mehengram setup`, which means you
+library is fetched from Microsoft during `anairyspirit setup`, which means you
 receive it from them rather than from us.
 
 ONNX Runtime brings third-party components of its own. Their notices are
@@ -10465,21 +10465,34 @@ SOFTWARE.
 Machine-learning models
 --------------------------------------------------------------------------------
 
-We do not redistribute any model. `mehengram setup` downloads them from their
+We do not redistribute any model. `anairyspirit setup` downloads them from their
 own sources, so you receive them from the publisher directly and under the
 publisher's terms. They are listed because the agreement says they would be, and
 because the answer to "may I use this commercially" should not require reading
-seven model cards.
+ten model cards.
 
-  model                                          licence
-  ---------------------------------------------  -----------
-  Xenova/bge-m3                        (embedding)  MIT
-  onnx-community/bge-reranker-v2-m3-ONNX (reranker) MIT
-  onnx-community/gte-multilingual-reranker-base     Apache-2.0
-  onnx-community/gliner_multi-v2.1          (NER)   Apache-2.0
-  onnx-community/gliner_small-v2.1          (NER)   Apache-2.0
-  onnx-community/gliner_multi_pii-v1        (NER)   Apache-2.0
-  onnx-community/gliner-multitask-large-v0.5 (NER)  Apache-2.0
+  model                                              licence
+  -------------------------------------------------  ----------
+  libryo-ai/BAAI-bge-m3-int8            (embedding)   MIT
+  Xenova/bge-m3                         (embedding)   MIT
+  intfloat/multilingual-e5-large        (embedding)   MIT
+  onnx-community/bge-reranker-v2-m3-ONNX (reranker)   Apache-2.0
+  onnx-community/gte-multilingual-reranker-base       Apache-2.0
+  onnx-community/gliner_multi-v2.1           (NER)    Apache-2.0
+  onnx-community/gliner_small-v2.1           (NER)    Apache-2.0
+  onnx-community/gliner_multi_pii-v1         (NER)    Apache-2.0
+  onnx-community/gliner-multitask-large-v0.5 (NER)    Apache-2.0
+  knowledgator/gliner-x-large                (NER)    Apache-2.0
+
+Checked against the publishers' model cards on 2026-08-23, not against our own
+record of them. Three of these were missing from this table until that date —
+including `libryo-ai/BAAI-bge-m3-int8`, which is the DEFAULT embedding model and
+therefore present on every installation. Attribution is an obligation under both
+MIT and Apache-2.0, so a missing row was a real gap, not an aesthetic one.
+
+The `onnx-community/*` re-exports do not declare a licence of their own; they
+inherit from the upstream weights they were converted from, which is what the
+column records.
 
 Every one of them permits commercial use. That is not an accident of the
 selection: the model registry (core/src/model_registry.rs) carries a licence per

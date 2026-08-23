@@ -1,15 +1,10 @@
 # Licence texts
 
-The An Airy Spirit End-User Licence Agreement, **Edition 1.0 (20 August 2026)**, in six
-languages.
+The An Airy Spirit Licence Agreement, **Edition 1.0 (20 August 2026)**, in six languages.
 
-Two files at the root carry it into the world. [`LICENSE`](../LICENSE) says what kind of
-licence this is, which edition, and where to read it — short enough that someone will.
-[`EULA.txt`](../EULA.txt) is the English text itself. Both travel inside every deb, rpm,
-tarball and image, because a summary pointing at a file the package does not contain
-would leave the reader with terms they cannot read.
-
-The files here are that same agreement, clause for clause.
+The text that ships with an artifact is [`LICENSE`](../LICENSE) at the repository root —
+the English edition in plain text, so it travels inside every package. The files here
+are the same agreement, clause for clause.
 
 ## The texts
 
