@@ -70,6 +70,9 @@ is one. Several are borrowed from memory science rather than from search
 engineering — that is deliberate, and it is the part of the design worth arguing
 about.
 
+**[What this is built on](THEORY.md)** — the papers behind each mechanism, with
+authors and links, and a plain statement of which parts are ours.
+
 ## Status
 
 Pre-release. Documentation, artifacts and benchmarks land here as they are ready.
