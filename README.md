@@ -1,4 +1,4 @@
-# An Airy Spirit
+# An Airy Spirit "Coming Soon"
 
 **Long-term memory for AI agents. Runs on your machine.**
 
@@ -49,15 +49,26 @@ restart.
 
 | layer | built with |
 |---|---|
-| core | Rust, a single statically linked binary |
-| storage | custom graph engine: mmap snapshot + write-ahead log |
-| encryption | ChaCha20-Poly1305 at the file level, key derived from a passphrase |
+| core | Rust, a single statically linked binary. No runtime, no interpreter, no service to call |
+| storage | custom graph engine: mmap snapshot + write-ahead log, crash-safe by replay |
+| encryption | ChaCha20-Poly1305 at the file level, key derived from a passphrase with Argon2id |
 | vectors | BGE-M3 via ONNX Runtime, hardware acceleration per platform |
-| reranking | cross-encoder (bge-reranker-v2-m3) |
-| entities | GLiNER over a regex baseline |
+| vector storage | Extended RaBitQ — 8× compression, no codebook to train or ship (Gao et al., SIGMOD 2025) |
+| nearest neighbours | HNSW, own implementation (Malkov & Yashunin, 2016) |
+| retrieval | a pipeline of stages you compose in settings, not a fixed recipe: dense similarity, lexical scoring (Okapi BM25), rank fusion, graph traversal, community structure, cross-encoder reranking. The default recipe uses four of these; the rest are one settings line away |
+| ranking by use | ACT-R base-level activation — what you reach for often stays reachable (Anderson & Schooler, 1991) |
+| associations | Hebbian plasticity over co-activation: edges learn from what gets recalled together. Off unless you turn it on |
+| consolidation | sleep cycles — light and deep. Loose material settles into connected structure in the background |
+| time | bi-temporal: when a thing happened, separately from when the memory learned of it |
+| entities | GLiNER zero-shot extraction over a regex baseline (Zaratiana et al., 2023) |
 | surfaces | CLI, REST/HTTPS, MCP, TUI, macOS menu bar |
 | extensions | plug-ins as shared libraries over a C ABI |
-| delivery | dmg, deb, rpm, tar.gz, Docker image — signed and checksummed |
+| delivery | dmg, deb, rpm, tar.gz, Docker image. GPG-signed manifest over every artifact; container images signed with cosign |
+
+Every mechanism above is named with the published work it comes from, where there
+is one. Several are borrowed from memory science rather than from search
+engineering — that is deliberate, and it is the part of the design worth arguing
+about.
 
 ## Status
 
