@@ -1,4 +1,4 @@
-# An Airy Spirit "Coming Soon"
+# <img src="assets/icon.png" width="56" height="56" align="middle" alt=""> An Airy Spirit "Coming Soon"
 
 **Long-term memory for AI agents. Runs on your machine.**
 
