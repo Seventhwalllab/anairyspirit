@@ -1,0 +1,76 @@
+# An Airy Spirit — release signing keys
+
+Every release on
+[GitHub Releases](https://github.com/Seventhwalllab/anairyspirit/releases)
+comes with a `SHA256SUMS` file listing the checksum of each download, and
+`SHA256SUMS.asc`, a GPG signature over that list. Check both before you run
+anything you downloaded.
+
+## Release key (GPG)
+
+```
+UID          Anairyspirit Release <release@seventhwalllab.com>
+Fingerprint  009B 027D B44A CA76 C1BE  8C4D 4E4B E48F B42F 8D86
+Algorithm    Ed25519
+Valid until  2031-05-21
+```
+
+The key also carries an older user ID, `Mehengram Test Operator`, marked
+revoked. That is expected: the product was renamed, the key stayed the same.
+
+## Check a download
+
+You need `gpg` once: on macOS `brew install gnupg`; on Debian or Ubuntu
+`sudo apt-get install gnupg`; on Fedora `sudo dnf install gnupg2`.
+
+In the folder with the files you downloaded, plus `SHA256SUMS` and
+`SHA256SUMS.asc` from the same release:
+
+```bash
+gpg --import KEYS                       # once: the key block below
+gpg --verify SHA256SUMS.asc SHA256SUMS  # expect: Good signature from "Anairyspirit Release <release@seventhwalllab.com>"
+sha256sum --check --ignore-missing SHA256SUMS        # Linux
+shasum -a 256 --check --ignore-missing SHA256SUMS    # macOS
+```
+
+Compare the fingerprint gpg prints with the one above. `BAD signature`, a
+different fingerprint, or any line marked `FAILED` means: do not run it —
+download again from the release page.
+
+## Docker image (cosign)
+
+The Docker image is signed with the key below; every release also attaches
+it as `anairyspirit-release.pub`.
+
+```bash
+cosign verify --key anairyspirit-release.pub seventhwalllab/anairyspirit:<version>
+```
+
+```
+-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbtLwquEdhxyYpUm6Pf7Ot8W7WXCO
+8EOIIPTAb8OPPk/hKMdODiVAPWiG+Picc6ui/jznPQaleFsJLkkkwhJr9g==
+-----END PUBLIC KEY-----
+```
+
+## GPG key block
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEahCgrhYJKwYBBAHaRw8BAQdArHBfJlYXn9JjABPiB+aD+i1Vnf3be8ncR9nC
+nBXz+lq0Nk1laGVuZ3JhbSBUZXN0IE9wZXJhdG9yIDxyZWxlYXNlQHNldmVudGh3
+YWxsbGFiLmxvY2FsPoh4BDAWCgAgFiEEAJsCfbRKynbBvoxNTkvkj7QvjYYFAmqJ
+/doCHSAACgkQTkvkj7QvjYaVUwEAxUPuBmzMHa4hmYvw6U5LanjdK+ufgq+iRPaj
+pMs+KeMBALEJ+kMPwXiEOW2WUcPrdMbAMJjdtSfFFykXTCoBSpYOiJYEExYIAD4W
+IQQAmwJ9tErKdsG+jE1OS+SPtC+NhgUCahCgrgIbAwUJCWYBgAULCQgHAgYVCgkI
+CwIEFgIDAQIeAQIXgAAKCRBOS+SPtC+Nhi8nAP43Vq1lcLkKPiLCpwf+FklfqhwV
+XEZ5e5yXuwAAlK7zDAD+LitZ4qQ65As1cuz5GAH4pUZ6tXr9AuYJcS/Qvq32Xwq0
+MUFuYWlyeXNwaXJpdCBSZWxlYXNlIDxyZWxlYXNlQHNldmVudGh3YWxsbGFiLmNv
+bT6InAQTFgoARAIbAwUJCWYBgAULCQgHAgIiAgYVCgkICwIEFgIDAQIeBwIXgBYh
+BACbAn20Ssp2wb6MTU5L5I+0L42GBQJqif3aAhkBAAoJEE5L5I+0L42GvZUA/3mJ
+KSMM1+lTAXxrMCsK95QVL2v146zp1HubledPLdjYAPkB/B93SGxqFkWDvUHXInGr
+XI+OOAsuDdaIQ6UaUGIlBw==
+=XSVk
+-----END PGP PUBLIC KEY BLOCK-----
+```
