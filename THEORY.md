@@ -66,10 +66,11 @@ mentions.
 > Anderson, J. R. (1983). **A Spreading Activation Theory of Memory.** *Journal of
 > Verbal Learning and Verbal Behavior*, 22(3), 261–295.
 
-In the default recipe: the dense and lexical hits seed the spread, the three
-scores are blended, and a cross-encoder reranks. On our own graph this puts the
-right memory in the top five a little more often than the same recipe without
-the walk — a modest gain, not a leap, and we would rather say so.
+In the default recipe — not for ranking, though it helps there too and we take
+that as a bonus, but because it is what makes this a memory rather than an index:
+recall that runs through connections, not through the words of the query. The
+stored graph is the past; activation spreading through it is what the memory is
+doing now.
 
 ### Consolidation, and why it is called sleep
 
@@ -227,9 +228,9 @@ Some of what is listed here is available but not switched on by default, and the
 reason is usually that we measured it and it did not help *on this workload*. That
 is not a verdict on the technique. ACT-R base-level activation is the example: a
 sound idea with a long record, and on our benchmark it ranked worse, so it waits
-to be switched on. Graph traversal went the other way. Used alone, on a personal
-memory graph whose edges are mostly similarity-derived, it re-did the work the
-dense retriever had done; blended with the direct hits instead of replacing them,
-it earned a small place in the default recipe.
+to be switched on. Graph traversal is the other case: used as a retriever on
+its own, on a personal memory graph whose edges are mostly similarity-derived,
+it re-did the dense retriever's work — which is not what it is for. It is in the
+default recipe for association, not for ranking.
 
 We would rather say that than quietly ship a stage that earns nothing.
