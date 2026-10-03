@@ -1,6 +1,6 @@
 # Contrat de licence utilisateur final An Airy Spirit
 
-**Édition 1.0 — 14 août 2026.**
+**Édition 1.0 — 20 août 2026.**
 
 La version anglaise fait foi ; la présente traduction française est fournie pour la
 commodité de la lecture. En cas de divergence, le texte anglais prévaut, sauf

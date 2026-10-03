@@ -2,7 +2,7 @@
 
 **Edition 1.0 — 20 August 2026.**
 
-This English text is authoritative. The Spanish, French, Portuguese and Chinese texts
+This English text is authoritative. The Spanish, French, Portuguese, Russian and Chinese texts
 are translations provided so the terms can be read in the reader's own language; where
 they differ from this one, this one governs — unless the law applicable to you provides
 otherwise.
