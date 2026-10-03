@@ -39,6 +39,9 @@ That is the ACT-R base-level learning equation, and it is forty years old.
 Implemented from the published equation. Nothing is copied from the ACT-R
 reference implementation, which carries a copyleft licence.
 
+Off unless you turn it on — on our benchmark it ranked worse (see the note at the
+end).
+
 ### Associations that form from what gets recalled together
 
 Edges are not only similarity. They also learn from co-activation: things
@@ -63,8 +66,10 @@ mentions.
 > Anderson, J. R. (1983). **A Spreading Activation Theory of Memory.** *Journal of
 > Verbal Learning and Verbal Behavior*, 22(3), 261–295.
 
-Available; not in the default recipe. We measured it on our own graph and it did
-not earn its place there — an honest result we would rather state than hide.
+In the default recipe: the dense and lexical hits seed the spread, the three
+scores are blended, and a cross-encoder reranks. On our own graph this puts the
+right memory in the top five a little more often than the same recipe without
+the walk — a modest gain, not a leap, and we would rather say so.
 
 ### Consolidation, and why it is called sleep
 
@@ -220,8 +225,11 @@ that we did not take it from anywhere.
 
 Some of what is listed here is available but not switched on by default, and the
 reason is usually that we measured it and it did not help *on this workload*. That
-is not a verdict on the technique. Graph traversal is a good example: it is a
-sound idea with a large literature, and on a personal memory graph whose edges are
-already similarity-derived it mostly re-does work the dense retriever has done.
+is not a verdict on the technique. ACT-R base-level activation is the example: a
+sound idea with a long record, and on our benchmark it ranked worse, so it waits
+to be switched on. Graph traversal went the other way. Used alone, on a personal
+memory graph whose edges are mostly similarity-derived, it re-did the work the
+dense retriever had done; blended with the direct hits instead of replacing them,
+it earned a small place in the default recipe.
 
 We would rather say that than quietly ship a stage that earns nothing.
