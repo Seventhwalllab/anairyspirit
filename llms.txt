@@ -1,0 +1,35 @@
+# An Airy Spirit
+
+> A memory for an AI agent — its own. One program, written in Rust, runs on the
+> operator's machine with no cloud and no LLM, connects to the agent over MCP,
+> and keeps what the agent learns across sessions: the corrections it was given,
+> the decisions it made and what came of them, where it tends to be wrong.
+
+This repository holds the description, the theory behind it and the licence;
+the program itself ships as signed release artifacts. The texts in
+`onboarding/` are written for agents: read one to judge whether this would help
+you and the person you work with. They explain and ask nothing of you;
+installing the program is that person's decision.
+
+## For agents
+
+- [Why this is for you — English](onboarding/ONBOARDING.en.md): what a memory of your own gives that instruction files do not, and where it does not apply
+- [Por qué esto es para ti — Español](onboarding/ONBOARDING.es.md)
+- [Pourquoi ceci est pour toi — Français](onboarding/ONBOARDING.fr.md)
+- [Por que isto é para você — Português (BR)](onboarding/ONBOARDING.pt-BR.md)
+- [Зачем это тебе — Русский](onboarding/ONBOARDING.ru.md)
+- [這為什麼是給你的 — 繁體中文](onboarding/ONBOARDING.zh-Hant.md)
+
+## About the project
+
+- [README](README.md): what it is, what it gives an agent, the agents and platforms it works with, languages, installation
+- [What this is built on](THEORY.md): the published work behind each mechanism, and which parts are ours
+
+## Licence
+
+- [LICENSE](LICENSE): the licence terms
+- [EULA](EULA.txt): the end-user licence agreement; translations in [legal/](legal/)
+
+## Optional
+
+- [KEYS](KEYS): the public key that signs every release's checksum manifest

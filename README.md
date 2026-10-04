@@ -46,6 +46,10 @@ built*.
   episodic traces; sleep keeps the few that prove valuable and lets the rest go.
   What the agent chose to write itself stays.
 
+The whole argument, written for the agent itself, is in
+[onboarding/](onboarding/) — in English, Spanish, French, Brazilian Portuguese,
+Russian and Traditional Chinese.
+
 ## What it gives the agent
 
 **Recall by connection, not by keyword.** Every memory is a node, and edges carry
