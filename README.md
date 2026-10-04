@@ -2,85 +2,165 @@
 
 # An Airy Spirit
 
-**Long-term memory for AI agents. Runs on your machine.**
+**Your agent's own memory. Experience that outlives the session.**
 
-An agent connected to An Airy Spirit remembers across sessions: what you tried and how it
-turned out, what it suggested and whether that worked, what you keep coming back to.
-The memory is a graph that grows - loose material settles into connections, unused ones fade,
-and consolidation runs in the background the way sleep does.
+Every session, an AI agent starts from zero. The corrections it earned yesterday,
+the mistakes it already made, what it learned about how you work — gone with the
+context window. An Airy Spirit gives the agent a memory of its own, on your
+machine, so that experience accumulates instead of evaporating.
 
-One binary. The memory layer needs no external model and no network.
+Not a store of documents about your project — your repository already holds
+those. A record of how the agent itself works: where it tends to be wrong, which
+corrections it was given and why, what it decided and what came of it.
 
-## What it does
+The memory is a graph that lives the way memory does. New material settles into
+connections during sleep; what goes unused dims — it is never deleted, and it
+rises again when it is needed, because an approach that was wrong a month ago may
+be right under today's conditions. Over time the agent comes to hold positions
+rather than a readiness to agree. Our aim — a goal, not a claim — is that
+experience, kept long enough, becomes a self.
 
-**Remembers by connection, not by list.** Every memory is a node, and edges carry
-meaning: closeness, contradiction, supersession, part of a whole. A query starts from
-the direct matches and spreads along the edges to their neighbours - spreading
-activation - so "what did we decide about X" is found through what it is connected to,
-not only through matching words.
+One program, written in Rust from the storage engine up. No cloud, no LLM, no
+interpreter.
 
-**Grows with use.** Consolidation runs on its own, the way sleep does, in two modes -
-frequent and cheap, rare and heavy - the second inside a snapshot boundary that can be
-rolled back. Loose material settles into connected structure; links nothing reaches
-fade away.
+## Why not files
 
-**Tells apart when it happened and when it learned it.** Each memory carries both times,
-so "last week" means the week of the event. Time phrases in a query are understood in
-six languages.
+Your agent already reads files at startup — `CLAUDE.md`, `AGENTS.md`, a folder of
+analysis. They answer *how this code is built*. Memory answers *how the agent is
+built*.
 
-**Knows people and things.** Entities are extracted automatically; different spellings
-of one name surface as merge candidates instead of splitting one person into five.
+- **Calibration, not knowledge.** "I conclude something is absent after failing to
+  find it on the first pass" is not a fact about any file. It is a fact about the
+  agent, and it fires every time.
+- **A correction is earned, not spent.** The agent decides what is worth keeping
+  and writes it down; remembered once, it is there in every session after.
+  Nothing is harvested from the conversation wholesale.
+- **Experience crosses projects.** Patterns of behaviour are recognised wherever
+  they recur — in another repository, another language, another goal. A file
+  stays in the repository it was written in.
+- **It moves as one piece.** Copy it, encrypt it, carry it to a server or a
+  container: on the new machine it is the same memory, not a hundred scattered
+  files that are "roughly the same, I think".
+- **Forgetting is designed in.** What is used rises, what is not dims, and a
+  place in long-term memory is earned. The agent's own replies leave short-lived
+  episodic traces; sleep keeps the few that prove valuable and lets the rest go.
+  What the agent chose to write itself stays.
 
-**Explains its results.** Any query can return a breakdown: what was found at each step,
-how long it took, and why the results landed in that order.
+## What it gives the agent
+
+**Recall by connection, not by keyword.** Every memory is a node, and edges carry
+meaning: similarity, contradiction, supersession, part of a whole. A query starts
+from the direct matches and spreads along the edges to their neighbours, so "what
+did we decide about X" is found through what it is connected to.
+
+**Consolidation while idle.** A light sleep runs on its own as material arrives.
+A deep sleep — the one that groups memories into topics and finds how they
+relate — runs by itself when it is due and the
+machine is idle, once automatic deep sleep is on (one click in the menu bar);
+until then the agent is told when it is due. A deep sleep is all or nothing: if
+it fails halfway, the memory is exactly as it was before it began.
+
+**Two dates on every memory.** When the thing happened, and when the agent wrote
+it down. So "last week" finds what happened last week, even if it was recorded
+today.
+
+**People and things.** Names of people, projects and places are picked out
+automatically, and a name spelled two ways stays one person instead of becoming
+two.
+
+**Search that explains itself.** Any search can show its work: what each step
+found, how long it took, and why the results came out in that order.
 
 ## Your data
 
-**On your disk.** The graph is a single file, crash-safe through a write-ahead log.
+- **On your disk.** Everything lives in one folder. A crash or a power cut loses
+  nothing that was already written.
+- **No cloud, no LLM.** Models download once at setup (about 1.5 GB; an offline
+  install is supported). After that nothing leaves the machine. No telemetry.
+- **Encrypted if you want it.** Three modes: none; passphrase asked at every start
+  and held in memory only; passphrase on disk for unattended boot. Switch between
+  them at any time; the data stays.
+- **Recoverable by you alone.** Every install gets its own 24-word recovery phrase,
+  generated locally. It lifts an emergency stop and resets a forgotten passphrase.
+- **Stoppable.** An emergency stop in three strengths; the strongest survives a
+  restart, and only the recovery phrase lifts it.
+- **Portable.** One encrypted file carries the whole memory to another machine.
 
-**Encrypted if you want it.** Three modes: none; passphrase asked at every start and
-held in memory only; passphrase on disk for unattended boot. Switching between them
-re-keys in place and keeps the data.
+## Works with
 
-**Recoverable by you alone.** Every install gets its own 24-word recovery phrase,
-generated locally. It releases a locked graph and resets a forgotten passphrase.
+**Agents:** Claude Code, Claude Desktop, Gemini CLI, Antigravity, Codex, Cursor,
+Grok, Kiro — connected over MCP; where the agent supports it, memory is also brought into
+the conversation at the start of a session. Any other MCP client works with a
+manual config.
 
-**Stoppable.** A kill switch with four levels, up to a one-way hard stop that survives
-restart.
+**Platforms:** macOS 11+ (Apple Silicon and Intel, one universal app); Linux
+x86_64 and arm64 (`.deb`, `.rpm`, `.tar.gz`; glibc 2.34+); Docker (amd64, arm64).
 
-**Portable.** An encrypted bundle moves the whole graph to another machine.
+**Machine:** about 2 GB of RAM while running and 1.5 GB of disk for the models. On
+a machine with 16 GB or more, search orders its results with a larger, more
+accurate model.
 
-## Stack
+**Languages**
+
+| what | languages |
+|---|---|
+| remembering and searching by meaning | 100+ — multilingual embeddings and reranker |
+| time phrases in a query ("last week", "вчера"), auto-tagging, contradiction cues | English, Russian, German, Spanish, French, Portuguese |
+| the onboarding text for the agent, the licence agreement | English, Spanish, French, Brazilian Portuguese, Russian, Traditional Chinese |
+| the program itself — command line, full-screen console, menu bar, built-in manual | English |
+
+## Install
+
+| platform | |
+|---|---|
+| macOS | open the disk image and the app — it walks you through setup |
+| Homebrew (macOS, Linux) | `brew tap seventhwalllab/anairyspirit https://github.com/Seventhwalllab/anairyspirit && brew install anairyspirit` |
+| Debian, Ubuntu | `sudo apt install ./anairyspirit-cli_<version>-1_<arch>.deb && anairyspirit setup` |
+| Fedora, RHEL, openSUSE | `sudo dnf install ./anairyspirit-cli-<version>-1.<arch>.rpm && anairyspirit setup` |
+| any other Linux | unpack the `.tar.gz`, then `./anairyspirit setup` |
+| Docker | `docker pull seventhwalllab/anairyspirit` (or `ghcr.io/seventhwalllab/anairyspirit`), then run it with a data volume |
+
+Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
+key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the
+program: `anairyspirit man`.
+
+## Under the hood
+
+**Written in Rust, from the storage engine up** — about 290,000 lines: the graph
+store, vector index, search pipeline, encryption, the service, the command line,
+the menu bar and the setup windows. No Python, no JVM, no interpreter at runtime.
+The one exception is a 380-line Node bridge that Claude Desktop's extension format
+requires; the program writes it out when you connect that client.
 
 | layer | built with |
 |---|---|
-| core | Rust, a single statically linked binary. No runtime, no interpreter, no service to call |
-| storage | custom graph engine: mmap snapshot + write-ahead log, crash-safe by replay |
+| core | Rust. One program is the service, the command line, the MCP server and the menu bar. No LLM, no cloud API |
+| storage | own graph engine: mmap snapshot + write-ahead log, crash-safe by replay |
 | encryption | ChaCha20-Poly1305 at the file level, key derived from a passphrase with Argon2id |
-| vectors | BGE-M3 via ONNX Runtime, hardware acceleration per platform |
-| vector storage | Extended RaBitQ - 8× compression, no codebook to train or ship (Gao et al., SIGMOD 2025) |
+| vectors | BGE-M3 (multilingual) via ONNX Runtime |
+| vector storage | Extended RaBitQ — about 8× compression, no codebook to train or ship (Gao et al., SIGMOD 2025) |
 | nearest neighbours | HNSW, own implementation (Malkov & Yashunin, 2016) |
 | retrieval | a pipeline of stages you compose in settings, not a fixed recipe: dense similarity, lexical scoring (Okapi BM25), rank fusion, spreading activation over the graph (Collins & Loftus, 1975), community structure, cross-encoder reranking. The default recipe uses four of these, spreading activation among them; the rest are one settings line away |
-| ranking by use | ACT-R base-level activation - what you reach for often stays reachable (Anderson & Schooler, 1991). Opt-in |
+| ranking by use | ACT-R base-level activation — what is reached for often stays reachable (Anderson & Schooler, 1991). Opt-in |
 | associations | Hebbian plasticity over co-activation: edges learn from what gets recalled together. Opt-in |
-| consolidation | sleep cycles - light and deep. Loose material settles into connected structure in the background |
-| time | bi-temporal: when a thing happened, separately from when the memory learned of it |
-| entities | GLiNER zero-shot extraction over a regex baseline (Zaratiana et al., 2023) |
-| surfaces | CLI, REST/HTTPS, MCP, TUI, macOS menu bar |
-| extensions | a plug-in interface - shared libraries over a C ABI; no plug-ins ship at the moment |
-| delivery | dmg (Developer ID signed), deb, rpm, tar.gz, Homebrew, Docker image. GPG-signed manifest over every artifact; container images signed with cosign |
+| consolidation | light and deep sleep cycles; a deep sleep is all or nothing — a failure halfway leaves the memory as it was |
+| time | bi-temporal: the date a thing happened and the date it was recorded are kept apart |
+| entities | GLiNER zero-shot extraction over a rule-based baseline (Zaratiana et al., 2023) |
+| surfaces | MCP, REST over HTTPS, command line, full-screen console, macOS menu bar and setup windows |
+| extensions | a plug-in interface — shared libraries over a C ABI |
+| delivery | dmg (Developer ID signed; notarisation in progress), deb, rpm (GPG-signed), tar.gz, Homebrew, Docker image. GPG-signed manifest over every artifact; container images signed with cosign |
 
 Every mechanism above is named with the published work it comes from, where there
 is one. Several are borrowed from memory science rather than from search
-engineering - that is deliberate, and it is the part of the design worth arguing
+engineering — that is deliberate, and it is the part of the design worth arguing
 about.
 
-**[What this is built on](THEORY.md)** - the papers behind each mechanism, with
+**[What this is built on](THEORY.md)** — the papers behind each mechanism, with
 authors and links, and a plain statement of which parts are ours.
 
-## Status
+## Licence
 
-Documentation and artifacts land here.
+[LICENSE](LICENSE) and [EULA](EULA.txt); translations in [legal/](legal/).
 
 ---
 
