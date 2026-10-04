@@ -4,6 +4,19 @@
 
 **Your agent's own memory. Experience that outlives the session.**
 
+[![Made by Seventh Wall Lab](https://img.shields.io/badge/made_by-Seventh_Wall_Lab-1f2328?style=for-the-badge)](https://seventhwalllab.com)
+[![Release](https://img.shields.io/github/v/release/Seventhwalllab/anairyspirit?include_prereleases&sort=semver&style=for-the-badge&label=release&color=e8743b)](https://github.com/Seventhwalllab/anairyspirit/releases)
+[![License](https://img.shields.io/badge/license-EULA-5b8c3a?style=for-the-badge)](LICENSE)
+[![Platforms](https://img.shields.io/badge/runs_on-macOS_·_Linux_·_Docker-3d5a80?style=for-the-badge)](#works-with)
+
+[![Rust](https://img.shields.io/badge/written_in-Rust-b7410e?style=for-the-badge&logo=rust&logoColor=white)](#under-the-hood)
+[![MCP](https://img.shields.io/badge/MCP-server-1f2328?style=for-the-badge&logo=modelcontextprotocol&logoColor=white)](#works-with)
+[![Agent memory](https://img.shields.io/badge/agent-memory-6a4c93?style=for-the-badge)](onboarding/)
+[![Graph memory](https://img.shields.io/badge/memory-graph-6a4c93?style=for-the-badge)](#what-it-gives-the-agent)
+[![Local-first](https://img.shields.io/badge/local--first-no_cloud_·_no_telemetry-2a7f62?style=for-the-badge)](#your-data)
+[![Encryption](https://img.shields.io/badge/encryption-ChaCha20--Poly1305-2a7f62?style=for-the-badge)](#your-data)
+[![ONNX Runtime](https://img.shields.io/badge/ONNX-Runtime-3d5a80?style=for-the-badge&logo=onnx&logoColor=white)](#under-the-hood)
+
 Every session, an AI agent starts from zero. The corrections it earned yesterday,
 the mistakes it already made, what it learned about how you work — gone with the
 context window. An Airy Spirit gives the agent a memory of its own, on your
