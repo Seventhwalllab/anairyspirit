@@ -165,7 +165,7 @@ requires; the program writes it out when you connect that client.
 | entities | GLiNER zero-shot extraction over a rule-based baseline (Zaratiana et al., 2023) |
 | surfaces | MCP, REST over HTTPS, command line, full-screen console, macOS menu bar and setup windows |
 | extensions | a plug-in interface — shared libraries over a C ABI |
-| delivery | dmg (Developer ID signed; notarisation in progress), deb, rpm (GPG-signed), tar.gz, Homebrew, Docker image. GPG-signed manifest over every artifact; container images signed with cosign |
+| delivery | dmg (Developer ID signed and notarised by Apple), deb, rpm (GPG-signed), tar.gz, Homebrew, Docker image. GPG-signed manifest over every artifact; container images signed with cosign |
 
 Every mechanism above is named with the published work it comes from, where there
 is one. Several are borrowed from memory science rather than from search
