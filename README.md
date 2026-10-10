@@ -131,11 +131,12 @@ accurate model.
 | platform | |
 |---|---|
 | macOS | open the disk image and the app — it walks you through setup |
-| Homebrew (macOS, Linux) | `brew tap seventhwalllab/anairyspirit https://github.com/Seventhwalllab/anairyspirit && brew install anairyspirit` |
+| Homebrew (macOS, Linux) | `brew tap seventhwalllab/anairyspirit https://github.com/Seventhwalllab/anairyspirit && brew trust seventhwalllab/anairyspirit && brew install anairyspirit && anairyspirit setup` — needs a Homebrew that works on your system: on macOS, Command Line Tools that support your macOS version and a current git (`brew doctor` says so) |
 | Debian, Ubuntu | `sudo apt install ./anairyspirit-cli_<version>-1_<arch>.deb && anairyspirit setup` |
-| Fedora, RHEL, openSUSE | `sudo dnf install ./anairyspirit-cli-<version>-1.<arch>.rpm && anairyspirit setup` |
+| Fedora, RHEL | `sudo dnf install ./anairyspirit-cli-<version>-1.<arch>.rpm && anairyspirit setup` |
+| openSUSE | `sudo rpm --import https://raw.githubusercontent.com/Seventhwalllab/anairyspirit/main/KEYS && sudo zypper install ./anairyspirit-cli-<version>-1.<arch>.rpm && anairyspirit setup` — zypper checks the package signature, so the key comes first |
 | any other Linux | unpack the `.tar.gz`, then `./anairyspirit setup` |
-| Docker | `docker pull seventhwalllab/anairyspirit` (or `ghcr.io/seventhwalllab/anairyspirit`), then run it with a data volume |
+| Docker | download `anairyspirit-<version>-docker-<arch>.tar` from the release, `docker load -i` it, then run the image with a data volume |
 
 Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
 key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the
