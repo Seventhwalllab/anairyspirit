@@ -147,11 +147,11 @@ What the service takes, for a memory of about 12 thousand records. **We strongly
 recommend at least 5 GB of memory.** Figures are High / Balanced — the two search
 qualities in the menu-bar app.
 
-| | M1 | M3 Ultra | Docker arm64 |
-|---|---|---|---|
-| memory, idle | 2.7 / 2.4 GB | 4.2 / 3.7 GB | 3.8 / 3.5 GB |
-| memory, consolidation peak | 2.9 / 2.6 GB | 3.7 / 3.8 GB | 5.2 / 4.8 GB |
-| search | 3.5 / 1.5 s | 1.4 / 0.8 s | 3.8 / 1.7 s |
+| | M1 | M3 Ultra | Docker arm64 | Intel i7 |
+|---|---|---|---|---|
+| memory, idle | 2.7 / 2.4 GB | 4.2 / 3.7 GB | 3.8 / 3.5 GB | — / 1.9 GB |
+| memory, consolidation peak | 2.9 / 2.6 GB | 3.7 / 3.8 GB | 5.2 / 4.8 GB | — / 2.1 GB |
+| search | 3.5 / 1.5 s | 1.4 / 0.8 s | 3.8 / 1.7 s | — / 5.4 s |
 
 The full figures, disk use and which quality to choose: [docs/FINOPS.md](docs/FINOPS.md).
 

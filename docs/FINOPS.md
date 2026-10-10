@@ -24,24 +24,24 @@ The program offers High only where the machine can run it.
 
 **High**
 
-| | M1 | M3 Ultra | Docker arm64 |
-|---|---|---|---|
-| memory, idle | 2.7 GB | 4.2 GB | 3.8 GB |
-| memory, consolidation peak | 2.9 GB | 3.7 GB | 5.2 GB |
-| start | 41 s | 33 s | 36 s |
-| search | about 3.5 s | about 1.4 s | about 3.8 s |
+| | M1 | M3 Ultra | Docker arm64 | Intel i7 |
+|---|---|---|---|---|
+| memory, idle | 2.7 GB | 4.2 GB | 3.8 GB | — |
+| memory, consolidation peak | 2.9 GB | 3.7 GB | 5.2 GB | — |
+| start | 41 s | 33 s | 36 s | — |
+| search | about 3.5 s | about 1.4 s | about 3.8 s | not offered |
 
 **Balanced**
 
-| | M1 | M3 Ultra | Docker arm64 |
-|---|---|---|---|
-| memory, idle | 2.4 GB | 3.7 GB | 3.5 GB |
-| memory, consolidation peak | 2.6 GB | 3.8 GB | 4.8 GB |
-| start | 41 s | 32 s | 35 s |
-| search | about 1.5 s | about 0.8 s | about 1.7 s |
+| | M1 | M3 Ultra | Docker arm64 | Intel i7 |
+|---|---|---|---|---|
+| memory, idle | 2.4 GB | 3.7 GB | 3.5 GB | 1.9 GB |
+| memory, consolidation peak | 2.6 GB | 3.8 GB | 4.8 GB | 2.1 GB |
+| start | 41 s | 32 s | 35 s | about 2 min |
+| search | about 1.5 s | about 0.8 s | about 1.7 s | about 5.4 s |
 
 M1 is a MacBook Air with 16 GB, M3 Ultra a Mac Studio; Docker arm64 is the container on
-Apple Silicon with no memory limit.
+Apple Silicon with no memory limit; Intel i7 is a MacBook Pro (i7-8750H, 16 GB).
 
 **A container limited to 4 GB** (Docker Desktop → Settings → Resources, or `mem_limit:` in
 Compose — see `anairyspirit man install-docker`) still
@@ -49,8 +49,8 @@ runs: the service then skips the model that recognises names and relations and f
 them with rules instead, in about 2.3 GB. It works, but it is below the 5 GB we
 recommend.
 
-**Intel Macs** run Balanced only, and search there takes much longer than on Apple
-Silicon.
+**Intel Macs** run Balanced only: the High model takes about 18 s a search there, so the
+program does not offer it.
 
 ## Disk
 
