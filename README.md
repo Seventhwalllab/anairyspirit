@@ -139,10 +139,9 @@ brew install anairyspirit
 anairyspirit setup
 ```
 
-Homebrew itself has to work on your system: git 2.24 or newer, and on macOS Command Line
-Tools that support your macOS version (`brew doctor` checks both). On an Apple Silicon Mac use
-the native Homebrew in `/opt/homebrew`; one carried over from an Intel Mac lives in `/usr/local`
-and runs under Rosetta — `which -a brew` shows which one comes first.
+Homebrew installs a ready-made build, so neither Xcode nor Command Line Tools are needed.
+`brew tap` clones with git, which has to be 2.24 or newer — an older one fails with
+`unknown option 'end-of-options'`; `which -a git` shows which git comes first in your `PATH`.
 
 **Debian, Ubuntu:**
 
@@ -175,8 +174,17 @@ cd anairyspirit-<version>-<arch>
 
 Then open a new terminal, so the shell finds `anairyspirit`.
 
-**Docker** — download `anairyspirit-<version>-docker-<arch>.tar` from the release, `docker load -i`
-it, then run the image with a data volume.
+**Docker** — from GitHub's registry (the same image is on Docker Hub as `seventhwalllab/anairyspirit`):
+
+```bash
+docker pull ghcr.io/seventhwalllab/anairyspirit:latest
+docker run -d --name anairyspirit -v anairyspirit-data:/data \
+  -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \
+  --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
+```
+
+The image is signed: `cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:latest`
+with the key from the release page. The first start downloads the models and takes a few minutes.
 
 Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
 key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the

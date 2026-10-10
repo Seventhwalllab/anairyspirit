@@ -43,6 +43,7 @@ The Docker image is signed with the key below; every release also attaches
 it as `anairyspirit-release.pub`.
 
 ```bash
+cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:<version>
 cosign verify --key anairyspirit-release.pub seventhwalllab/anairyspirit:<version>
 ```
 
