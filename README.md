@@ -141,6 +141,20 @@ Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
 key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the
 program: `anairyspirit man`.
 
+## FinOps
+
+What the service takes, for a memory of about 12 thousand records. **We strongly
+recommend at least 5 GB of memory.** Figures are High / Balanced — the two search
+qualities in the menu-bar app.
+
+| | M1 | M3 Ultra | Docker arm64 |
+|---|---|---|---|
+| memory, idle | 2.7 / 2.4 GB | 4.2 / 3.7 GB | 3.8 / 3.5 GB |
+| memory, consolidation peak | 2.9 / 2.6 GB | 3.7 / 3.8 GB | 5.2 / 4.8 GB |
+| search | 3.5 / 1.5 s | 1.4 / 0.8 s | 3.8 / 1.7 s |
+
+The full figures, disk use and which quality to choose: [docs/FINOPS.md](docs/FINOPS.md).
+
 ## Under the hood
 
 **Written in Rust, from the storage engine up** — about 290,000 lines: the graph

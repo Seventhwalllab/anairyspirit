@@ -24,6 +24,7 @@ installing the program is that person's decision.
 
 - [README](README.md): what it is, what it gives an agent, the agents and platforms it works with, languages, installation
 - [What this is built on](THEORY.md): the published work behind each mechanism, and which parts are ours
+- [FinOps](docs/FINOPS.md): memory, disk and search time per machine, the two search qualities, at least 5 GB of memory recommended
 
 ## Licence
 
