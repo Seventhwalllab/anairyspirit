@@ -166,7 +166,14 @@ sudo zypper install ./anairyspirit-cli-<version>-1.<arch>.rpm
 anairyspirit setup
 ```
 
-**Any other Linux** — unpack the `.tar.gz`, then `./anairyspirit setup`.
+**Any other Linux** — unpack the `.tar.gz`, then:
+
+```bash
+cd anairyspirit-<version>-<arch>
+./anairyspirit setup
+```
+
+Then open a new terminal, so the shell finds `anairyspirit`.
 
 **Docker** — download `anairyspirit-<version>-docker-<arch>.tar` from the release, `docker load -i`
 it, then run the image with a data volume.
