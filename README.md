@@ -1,4 +1,4 @@
-<img src="assets/icon.png" width="168" height="168" alt="An Airy Spirit">
+<img src="assets/banner.jpg" alt="An Airy Spirit — your agent's own memory. Experience that outlives the session. npx anairyspirit setup · Seventh Wall Lab">
 
 # An Airy Spirit
 
