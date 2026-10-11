@@ -205,6 +205,24 @@ Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
 key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the
 program: `anairyspirit man`.
 
+## Benchmarks
+
+**LongMemEval** — finding the right past conversation. For each of 470 questions the memory is given that question's chat history, about 48 sessions, and searched once; the score is whether the session holding the answer comes back in the top five.
+
+| | Hit@5 | Recall@5 |
+|---|---|---|
+| **All 470 questions** | **98.5 %** | **91.1 %** |
+| facts the user stated | 100 % | 100 % |
+| what the assistant said | 100 % | 100 % |
+| knowledge that changed | 100 % | 95.1 % |
+| across several sessions | 99.2 % | 86.0 % |
+| reasoning about time | 97.6 % | 85.6 % |
+| preferences | 90.0 % | 90.0 % |
+
+Hit@5: a session with the answer is in the top five. Recall@5: the share of all answer sessions found there — some questions need several. Retrieval only: no language model answers and none judges, so this is the benchmark's session-level memory recall, not end-to-end QA accuracy. LongMemEval-S, questions without an answer excluded; public build 0.1.392 with its default settings.
+
+Benchmark: Wu et al., *LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory* — [arXiv:2410.10813](https://arxiv.org/abs/2410.10813).
+
 ## FinOps
 
 What the service takes, for a memory of about 12 thousand records. **We strongly
