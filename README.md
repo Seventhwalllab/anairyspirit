@@ -219,7 +219,7 @@ program: `anairyspirit man`.
 | reasoning about time | 97.6 % | 85.6 % |
 | preferences | 90.0 % | 90.0 % |
 
-Hit@5: a session with the answer is in the top five. Recall@5: the share of all answer sessions found there — some questions need several. Retrieval only: no language model answers and none judges, so this is the benchmark's session-level memory recall, not end-to-end QA accuracy. LongMemEval-S, questions without an answer excluded; public build 0.1.392 with its default settings.
+Hit@5: a session with the answer is in the top five. Recall@5: the share of all answer sessions found there — some questions need several. Retrieval only: no language model answers and none judges, so this is the benchmark's session-level memory recall, not end-to-end QA accuracy. No large language model takes part anywhere in the product: storing, searching and ranking run on small local models — an embedding model and a cross-encoder reranker — plus BM25. No LLM calls, no API, nothing leaves the machine. LongMemEval-S, questions without an answer excluded; public build 0.1.392 with its default settings.
 
 Benchmark: Wu et al., *LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory* — [arXiv:2410.10813](https://arxiv.org/abs/2410.10813).
 
