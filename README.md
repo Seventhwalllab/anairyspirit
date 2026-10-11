@@ -19,7 +19,7 @@
 
 [![npm](https://img.shields.io/npm/v/anairyspirit?style=for-the-badge&logo=npm&logoColor=white&color=cb3837&label=npm)](https://www.npmjs.com/package/anairyspirit)
 [![Docker Hub](https://img.shields.io/docker/v/seventhwalllab/anairyspirit?sort=semver&style=for-the-badge&logo=docker&logoColor=white&color=2496ed&label=docker%20hub)](https://hub.docker.com/r/seventhwalllab/anairyspirit)
-[![GHCR](https://img.shields.io/badge/ghcr.io-seventhwalllab%2Fanairyspirit-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Seventhwalllab/anairyspirit/pkgs/container/anairyspirit)
+[![GHCR](https://img.shields.io/badge/ghcr.io-image-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Seventhwalllab/anairyspirit/pkgs/container/anairyspirit)
 [![Homebrew](https://img.shields.io/badge/homebrew-brew_tap-fbb040?style=for-the-badge&logo=homebrew&logoColor=white)](#install)
 
 Every session, an AI agent starts from zero. The corrections it earned yesterday,
