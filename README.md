@@ -17,6 +17,11 @@
 [![Encryption](https://img.shields.io/badge/encryption-ChaCha20--Poly1305-2a7f62?style=for-the-badge)](#your-data)
 [![ONNX Runtime](https://img.shields.io/badge/ONNX-Runtime-3d5a80?style=for-the-badge&logo=onnx&logoColor=white)](#under-the-hood)
 
+[![npm](https://img.shields.io/npm/v/anairyspirit?style=for-the-badge&logo=npm&logoColor=white&color=cb3837&label=npm)](https://www.npmjs.com/package/anairyspirit)
+[![Docker Hub](https://img.shields.io/docker/v/seventhwalllab/anairyspirit?sort=semver&style=for-the-badge&logo=docker&logoColor=white&color=2496ed&label=docker%20hub)](https://hub.docker.com/r/seventhwalllab/anairyspirit)
+[![GHCR](https://img.shields.io/badge/ghcr.io-seventhwalllab%2Fanairyspirit-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Seventhwalllab/anairyspirit/pkgs/container/anairyspirit)
+[![Homebrew](https://img.shields.io/badge/homebrew-brew_tap-fbb040?style=for-the-badge&logo=homebrew&logoColor=white)](#install)
+
 Every session, an AI agent starts from zero. The corrections it earned yesterday,
 the mistakes it already made, what it learned about how you work — gone with the
 context window. An Airy Spirit gives the agent a memory of its own, on your
