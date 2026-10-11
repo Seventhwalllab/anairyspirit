@@ -2,11 +2,14 @@
 # no program inside. Made for one release, after that release is published:
 # the release's SHA256SUMS is checked against its GPG signature with the key in
 # KEYS, the checksums of the three archives go into the package (sums.json),
-# its tests run, and npm publishes it.
+# its tests run, npm publishes it, and the MCP Registry entry (npm/server.json)
+# is published for that version.
 #
 # No token: npm trusts this workflow by its name (trusted publishing, OIDC) and
-# records where the package came from (provenance). The `npm` environment
-# holds the job until a maintainer approves it.
+# records where the package came from (provenance); the MCP Registry takes the
+# same job's OIDC token for the io.github.Seventhwalllab namespace. Runs only
+# after a release is published — and a release is published only through
+# github-publish, by the operator's word.
 name: npm-release
 
 on:
@@ -64,3 +67,31 @@ jobs:
       - name: publish
         working-directory: npm
         run: npm publish --access public
+
+      # The MCP Registry entry (npm/server.json, name = package.json's mcpName):
+      # metadata only, pointing at this npm version. The registry checks that
+      # npm has the version and that its mcpName matches, and npm holds a new
+      # version in review for minutes — so wait for it first. mcp-publisher is
+      # pinned and checked by its sha256; login is this job's OIDC token, no
+      # secret.
+      - name: wait until npm serves this version
+        working-directory: npm
+        run: |
+          set -euo pipefail
+          V="$(node -p 'require("./package.json").version')"
+          for i in $(seq 1 60); do
+            if [ "$(npm view "anairyspirit@${V}" version 2>/dev/null)" = "${V}" ]; then echo "npm serves ${V}"; exit 0; fi
+            sleep 30
+          done
+          echo "✗ npm did not serve anairyspirit@${V} within 30 minutes" >&2; exit 1
+
+      - name: MCP Registry
+        working-directory: npm
+        run: |
+          set -euo pipefail
+          curl -fsSL -o /tmp/mcp-publisher.tgz \
+              https://github.com/modelcontextprotocol/registry/releases/download/v1.8.1/mcp-publisher_linux_amd64.tar.gz
+          echo "a06c9096dcb9727c13555b6be26c7effa707b01f06a4c561ba7a3635443cf2cc  /tmp/mcp-publisher.tgz" | sha256sum --check
+          tar -xzf /tmp/mcp-publisher.tgz -C /tmp mcp-publisher
+          /tmp/mcp-publisher login github-oidc
+          /tmp/mcp-publisher publish

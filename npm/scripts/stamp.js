@@ -35,4 +35,14 @@ const pkgPath = path.join(root, 'package.json');
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 pkg.version = version;
 fs.writeFileSync(pkgPath, `${JSON.stringify(pkg, null, 2)}\n`);
+// server.json — the MCP Registry entry — names the same version twice: the
+// entry's and its npm package's (the registry checks that npm has it and that
+// package.json's mcpName is the entry's name).
+const serverPath = path.join(root, 'server.json');
+if (fs.existsSync(serverPath)) {
+  const server = JSON.parse(fs.readFileSync(serverPath, 'utf8'));
+  server.version = version;
+  for (const p of server.packages || []) if (p.registryType === 'npm') p.version = version;
+  fs.writeFileSync(serverPath, `${JSON.stringify(server, null, 2)}\n`);
+}
 console.log(`✓ anairyspirit ${version}: ${Object.keys(files).length} archives`);

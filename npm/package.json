@@ -1,6 +1,7 @@
 {
   "name": "anairyspirit",
   "version": "0.0.0",
+  "mcpName": "io.github.Seventhwalllab/anairyspirit",
   "description": "Personal AI memory graph that runs locally: long-term memory for your AI agents over MCP and REST",
   "homepage": "https://github.com/Seventhwalllab/anairyspirit",
   "repository": {

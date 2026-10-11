@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Seventhwalllab/anairyspirit",
+  "title": "anairyspirit",
+  "description": "An AI agent's own long-term memory, on your machine. Needs a one-time: npx anairyspirit setup",
+  "websiteUrl": "https://github.com/Seventhwalllab/anairyspirit",
+  "repository": {
+    "url": "https://github.com/Seventhwalllab/anairyspirit",
+    "source": "github",
+    "subfolder": "npm"
+  },
+  "version": "0.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "anairyspirit",
+      "version": "0.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}
