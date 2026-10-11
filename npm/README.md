@@ -47,5 +47,6 @@ Other ways to install — a macOS disk image, Homebrew, Debian/Ubuntu and
 Fedora/openSUSE packages, Docker — and the manual:
 https://github.com/Seventhwalllab/anairyspirit
 
-The program is distributed under its own licence agreement (EULA), shipped with
-every release and shown by `setup`.
+The program and this package are distributed under the An Airy Spirit End-User
+Licence Agreement: `LICENSE` and `EULA.txt` in this package, shown again by
+`setup`.

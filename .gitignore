@@ -33,3 +33,5 @@ Desktop.ini
 npm/sums.json
 npm/*.tgz
 npm/node_modules/
+npm/LICENSE
+npm/EULA.txt

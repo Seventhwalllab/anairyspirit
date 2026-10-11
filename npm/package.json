@@ -8,7 +8,7 @@
     "url": "git+https://github.com/Seventhwalllab/anairyspirit.git",
     "directory": "npm"
   },
-  "license": "SEE LICENSE IN README.md",
+  "license": "SEE LICENSE IN LICENSE",
   "keywords": [
     "ai",
     "memory",
@@ -24,7 +24,9 @@
     "bin",
     "lib",
     "sums.json",
-    "README.md"
+    "README.md",
+    "LICENSE",
+    "EULA.txt"
   ],
   "os": [
     "darwin",

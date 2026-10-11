@@ -53,6 +53,9 @@ jobs:
           gpg --batch --quiet --import KEYS
           gpg --batch --verify /tmp/rel/SHA256SUMS.asc /tmp/rel/SHA256SUMS
           node npm/scripts/stamp.js "${TAG#v}" /tmp/rel/SHA256SUMS
+          # The licence travels with the package, as LICENSE says it must: the
+          # same files as at the root of this repository, copied, never kept twice.
+          cp LICENSE EULA.txt npm/
 
       - name: test
         working-directory: npm
