@@ -28,3 +28,8 @@ Desktop.ini
 # will drift from its source.
 *.pdf
 *.docx
+
+# npm/: made only when the package is built (.github/workflows/npm-release.yml).
+npm/sums.json
+npm/*.tgz
+npm/node_modules/

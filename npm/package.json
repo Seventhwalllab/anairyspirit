@@ -1,0 +1,39 @@
+{
+  "name": "anairyspirit",
+  "version": "0.0.0",
+  "description": "Personal AI memory graph that runs locally: long-term memory for your AI agents over MCP and REST",
+  "homepage": "https://github.com/Seventhwalllab/anairyspirit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seventhwalllab/anairyspirit.git",
+    "directory": "npm"
+  },
+  "license": "SEE LICENSE IN README.md",
+  "keywords": [
+    "ai",
+    "memory",
+    "mcp",
+    "agents",
+    "knowledge-graph",
+    "local-first"
+  ],
+  "bin": {
+    "anairyspirit-npm": "bin/anairyspirit.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "sums.json",
+    "README.md"
+  ],
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

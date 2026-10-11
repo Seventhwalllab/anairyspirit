@@ -1,0 +1,63 @@
+# The npm package `anairyspirit` (the folder npm/): an installer and launcher,
+# no program inside. Made for one release, after that release is published:
+# the release's SHA256SUMS is checked against its GPG signature with the key in
+# KEYS, the checksums of the three archives go into the package (sums.json),
+# its tests run, and npm publishes it.
+#
+# No token: npm trusts this workflow by its name (trusted publishing, OIDC) and
+# records where the package came from (provenance). The `npm` environment
+# holds the job until a maintainer approves it.
+name: npm-release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (vX.Y.Z) to make the package for'
+        required: true
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Trusted publishing needs npm 11.5.1 or newer.
+      - name: npm with trusted publishing
+        run: npm install -g npm@latest
+
+      - name: version and checksums from the signed release manifest
+        env:
+          TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+          printf '%s' "${TAG}" | grep -qE '^v[0-9]+\.[0-9]+\.[0-9]+$' \
+              || { echo "✗ not a release tag: ${TAG}" >&2; exit 1; }
+          U="https://github.com/${GITHUB_REPOSITORY}/releases/download/${TAG}"
+          mkdir -p /tmp/rel
+          curl -fsSL -o /tmp/rel/SHA256SUMS "${U}/SHA256SUMS"
+          curl -fsSL -o /tmp/rel/SHA256SUMS.asc "${U}/SHA256SUMS.asc"
+          export GNUPGHOME="$(mktemp -d)"
+          gpg --batch --quiet --import KEYS
+          gpg --batch --verify /tmp/rel/SHA256SUMS.asc /tmp/rel/SHA256SUMS
+          node npm/scripts/stamp.js "${TAG#v}" /tmp/rel/SHA256SUMS
+
+      - name: test
+        working-directory: npm
+        run: npm test
+
+      - name: publish
+        working-directory: npm
+        run: npm publish --access public
