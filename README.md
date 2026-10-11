@@ -143,6 +143,16 @@ Homebrew installs a ready-made build, so neither Xcode nor Command Line Tools ar
 `brew tap` clones with git, which has to be 2.24 or newer — an older one fails with
 `unknown option 'end-of-options'`; `which -a git` shows which git comes first in your `PATH`.
 
+**npm** (macOS, Linux; Node 18 or newer):
+
+```bash
+npx anairyspirit setup
+```
+
+The package downloads this release's archive for your machine, checks it against the signed
+checksums and runs `setup` from it. Once installed, an AI client can start the program with
+`npx -y anairyspirit mcp`; `npx anairyspirit@latest update` updates it.
+
 **Debian, Ubuntu:**
 
 ```bash
