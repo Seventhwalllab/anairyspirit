@@ -9251,8 +9251,8 @@ Community Data License Agreement Permissive 2.0
 --------------------------------------------------------------------------------
 
 Applies to:
-  * webpki-root-certs 1.0.7
-  * webpki-roots 1.0.7
+  * webpki-root-certs 1.0.10
+  * webpki-roots 1.0.10
 # Community Data License Agreement - Permissive - Version 2.0
 
 This is the Community Data License Agreement - Permissive, Version
@@ -9883,7 +9883,7 @@ ISC License
 --------------------------------------------------------------------------------
 
 Applies to:
-  * rustls-webpki 0.103.15
+  * rustls-webpki 0.103.16
 Except as otherwise noted, this project is licensed under the following
 (ISC-style) terms:
 
