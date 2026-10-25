@@ -11245,7 +11245,7 @@ MIT License
 Applies to:
   * tokio-stream 0.1.18
   * tokio-util 0.7.18
-  * tokio 1.52.1
+  * tokio 1.54.1
 MIT License
 
 Copyright (c) Tokio Contributors
