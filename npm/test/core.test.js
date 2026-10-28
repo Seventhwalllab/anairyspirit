@@ -7,7 +7,9 @@ const path = require('path');
 const http = require('http');
 const crypto = require('crypto');
 const { spawnSync } = require('child_process');
+const { PassThrough } = require('stream');
 const core = require('../lib/core.js');
+const notice = require('../lib/notice.js');
 
 function tmpdir() {
   return fs.mkdtempSync(path.join(os.tmpdir(), 'as-npm-test-'));
@@ -141,13 +143,58 @@ test('main: update hands the newer release to `update --from`; same version does
   }
 });
 
-test('main: nothing installed and a command other than setup → a clear refusal', async () => {
+test('main: nothing installed and a command other than setup or mcp → a clear refusal', async () => {
   const lines = [];
-  const code = await core.main(['mcp'], {
+  const code = await core.main(['status'], {
     sums: { version: '0.1.391', files: {} }, env: { PATH: tmpdir() }, home: tmpdir(),
     platform: 'linux', arch: 'x64', self: '/nonexistent/launcher.js', log: (m) => lines.push(m), extraDirs: [],
   });
   assert.strictEqual(code, 1);
+  assert.match(lines.join('\n'), /npx anairyspirit setup/);
+});
+
+test('notice: initialize, tools/list, tools/call; notifications get no answer', () => {
+  const v = '0.1.391';
+  const init = notice.respond({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-03-26' } }, v);
+  assert.strictEqual(init.result.protocolVersion, '2025-03-26');
+  assert.deepStrictEqual(init.result.serverInfo, { name: 'anairyspirit', version: v });
+  assert.deepStrictEqual(init.result.capabilities, { tools: {} });
+  const unknown = notice.respond({ jsonrpc: '2.0', id: 2, method: 'initialize', params: { protocolVersion: '1999-01-01' } }, v);
+  assert.strictEqual(unknown.result.protocolVersion, notice.PROTOCOL_VERSIONS[0]);
+  assert.strictEqual(notice.respond({ jsonrpc: '2.0', method: 'notifications/initialized' }, v), null);
+  const list = notice.respond({ jsonrpc: '2.0', id: 3, method: 'tools/list' }, v);
+  assert.deepStrictEqual(list.result.tools.map((t) => t.name), [notice.TOOL]);
+  const call = notice.respond({ jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: notice.TOOL, arguments: {} } }, v);
+  assert.strictEqual(call.result.isError, false);
+  assert.match(call.result.content[0].text, /npx anairyspirit setup/);
+  assert.match(call.result.content[0].text, /v0\.1\.391/);
+  assert.strictEqual(notice.respond({ jsonrpc: '2.0', id: 5, method: 'tools/call', params: { name: 'search' } }, v).error.code, -32602);
+  assert.strictEqual(notice.respond({ jsonrpc: '2.0', id: 6, method: 'resources/list' }, v).error.code, -32601);
+  assert.deepStrictEqual(notice.respond({ jsonrpc: '2.0', id: 7, method: 'ping' }, v).result, {});
+});
+
+test('main: nothing installed and `mcp` → answers MCP over stdio until stdin closes', async () => {
+  const stdin = new PassThrough();
+  const stdout = new PassThrough();
+  let out = '';
+  stdout.on('data', (c) => { out += c; });
+  const lines = [];
+  const done = core.main(['mcp'], {
+    sums: { version: '0.1.391', files: {} }, env: { PATH: tmpdir() }, home: tmpdir(),
+    platform: 'linux', arch: 'x64', self: '/nonexistent/launcher.js', log: (m) => lines.push(m), extraDirs: [],
+    stdin, stdout,
+  });
+  stdin.write(`${JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: { protocolVersion: '2025-06-18' } })}\n`);
+  stdin.write(`${JSON.stringify({ jsonrpc: '2.0', method: 'notifications/initialized' })}\n`);
+  stdin.write('not json\n');
+  stdin.end(`${JSON.stringify({ jsonrpc: '2.0', id: 2, method: 'tools/list' })}\n`);
+  assert.strictEqual(await done, 0);
+  const msgs = out.trim().split('\n').map((l) => JSON.parse(l));
+  assert.deepStrictEqual(msgs.map((m) => m.id), [1, null, 2]);
+  assert.strictEqual(msgs[0].result.protocolVersion, '2025-06-18');
+  assert.strictEqual(msgs[1].error.code, -32700);
+  assert.deepStrictEqual(msgs[2].result.tools.map((t) => t.name), [notice.TOOL]);
+  // The refusal still goes to stderr, never into the MCP stream.
   assert.match(lines.join('\n'), /npx anairyspirit setup/);
 });
 

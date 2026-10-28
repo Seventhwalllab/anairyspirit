@@ -8,7 +8,10 @@
 //   * nothing installed yet: `anairyspirit` / `anairyspirit setup` downloads
 //     the archive for this machine from the GitHub release, checks its sha256,
 //     unpacks it and runs `./anairyspirit setup` from it — the same install as
-//     from the archive by hand;
+//     from the archive by hand; `anairyspirit mcp` answers MCP with one tool
+//     that tells the agent the user has to run `npx anairyspirit setup`
+//     (lib/notice.js) — an MCP client sees a server that explains, not one
+//     that does not start;
 //   * installed (any way — disk image, Homebrew, .deb/.rpm, archive): every
 //     command goes to the installed program, so `npx -y anairyspirit mcp`
 //     works in an MCP client's configuration;
@@ -31,6 +34,7 @@ const crypto = require('crypto');
 const http = require('http');
 const https = require('https');
 const { spawn, spawnSync } = require('child_process');
+const notice = require('./notice.js');
 
 const RELEASES = 'https://github.com/Seventhwalllab/anairyspirit/releases/download';
 const TAG = 'anairyspirit (npm)';
@@ -214,6 +218,9 @@ async function main(args, opts) {
     }
     log(`${TAG}: anairyspirit is not installed on this machine yet.`);
     log('Install it first:  npx anairyspirit setup');
+    if (args[0] === 'mcp') {
+      return notice.serve(o.stdin || process.stdin, o.stdout || process.stdout, o.sums.version);
+    }
     return 1;
   }
 
