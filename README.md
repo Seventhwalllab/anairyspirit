@@ -98,7 +98,9 @@ found, how long it took, and why the results came out in that order.
 - **On your disk.** Everything lives in one folder. A crash or a power cut loses
   nothing that was already written.
 - **No cloud, no LLM.** Models download once at setup (about 1.5 GB; an offline
-  install is supported). After that nothing leaves the machine. No telemetry.
+  install is supported). After that nothing leaves the machine. No telemetry. The
+  one exception is yours to make: an optional writeback mode (`llm`, off by default)
+  calls a model at the address you give it.
 - **Encrypted if you want it.** Three modes: none; passphrase asked at every start
   and held in memory only; passphrase on disk for unattended boot. Switch between
   them at any time; the data stays.
