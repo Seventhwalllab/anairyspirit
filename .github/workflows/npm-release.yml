@@ -26,20 +26,17 @@ permissions:
   id-token: write
 
 jobs:
-  publish:
+  # One package, made once: version and checksums from the signed release,
+  # tests, `npm pack`. That tarball is what pack-smoke runs and what the publish
+  # job sends — the thing checked is the thing the registry gets.
+  build:
     runs-on: ubuntu-latest
-    environment: npm
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          registry-url: 'https://registry.npmjs.org'
-
-      # Trusted publishing needs npm 11.5.1 or newer.
-      - name: npm with trusted publishing
-        run: npm install -g npm@latest
 
       - name: version and checksums from the signed release manifest
         env:
@@ -64,9 +61,72 @@ jobs:
         working-directory: npm
         run: npm test
 
-      - name: publish
+      - name: pack
         working-directory: npm
-        run: npm publish --access public
+        run: |
+          set -euo pipefail
+          mkdir -p ../dist
+          npm pack --pack-destination ../dist
+          cp package.json server.json ../dist/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: npm-package
+          path: dist/
+
+  # The package as a person gets it, on each platform a release is built for
+  # (Linux x86_64 and arm64, macOS): `npx -y --package=<tarball> <bin> mcp` in
+  # an empty folder, `initialize` and `tools/list` → the one tool
+  # `setup_required` (`npm/scripts/pack-smoke.js`). `npm test` calls the
+  # launcher's functions and cannot see what npm does with package.json before
+  # our code runs.
+  pack-smoke:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: npm-package
+          path: dist
+      - name: npx -y <the packed tarball> mcp answers MCP
+        run: node npm/scripts/pack-smoke.js dist
+
+  publish:
+    needs: pack-smoke
+    runs-on: ubuntu-latest
+    environment: npm
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Trusted publishing needs npm 11.5.1 or newer.
+      - name: npm with trusted publishing
+        run: npm install -g npm@latest
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: npm-package
+          path: dist
+
+      # The stamped package.json and server.json, for the registry steps below.
+      - name: the published version's metadata
+        run: cp dist/package.json dist/server.json npm/
+
+      - name: publish the checked tarball
+        working-directory: npm
+        run: npm publish ../dist/anairyspirit-*.tgz --access public
 
       # The MCP Registry entry (npm/server.json, name = package.json's mcpName):
       # metadata only, pointing at this npm version. The registry checks that
