@@ -29,10 +29,6 @@
     "LICENSE",
     "EULA.txt"
   ],
-  "os": [
-    "darwin",
-    "linux"
-  ],
   "engines": {
     "node": ">=18"
   },

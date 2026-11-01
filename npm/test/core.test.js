@@ -206,4 +206,27 @@ test('main: an unsupported platform says so', async () => {
   });
   assert.strictEqual(code, 1);
   assert.match(lines.join('\n'), /macOS and on Linux/);
+  assert.match(lines.join('\n'), /Docker Desktop/);
+});
+
+test('main: on an unsupported platform `mcp` answers MCP and names Docker', async () => {
+  const { PassThrough } = require('node:stream');
+  const input = new PassThrough();
+  const output = new PassThrough();
+  let out = '';
+  output.on('data', (c) => { out += c; });
+  const done = core.main(['mcp'], {
+    sums: { version: '0.1.441', files: {} }, env: {}, home: tmpdir(),
+    platform: 'win32', arch: 'x64', self: '/x', log: () => {}, extraDirs: [],
+    stdin: input, stdout: output,
+  });
+  input.write(`${JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: {} })}\n`);
+  input.write(`${JSON.stringify({ jsonrpc: '2.0', id: 2, method: 'tools/call', params: { name: notice.TOOL } })}\n`);
+  input.end();
+  assert.strictEqual(await done, 0);
+  const msgs = out.trim().split('\n').map((l) => JSON.parse(l));
+  assert.strictEqual(msgs[0].result.serverInfo.name, 'anairyspirit');
+  const text = msgs[1].result.content[0].text;
+  assert.match(text, /docker exec -i anairyspirit anairyspirit mcp/);
+  assert.match(text, /WSL/);
 });

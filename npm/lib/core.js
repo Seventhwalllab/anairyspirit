@@ -202,7 +202,12 @@ async function main(args, opts) {
   const o = { ...opts, log };
   if (!archiveFor(o.platform, o.arch, o.sums.version)) {
     log(`${TAG}: anairyspirit runs on macOS and on Linux (x86_64, arm64); this is ${o.platform}/${o.arch}.`);
-    log('On Windows, run it in Docker: https://github.com/Seventhwalllab/anairyspirit#install');
+    log('On Windows, run it in Docker Desktop, or inside WSL with `npx anairyspirit setup`:');
+    log('  https://github.com/Seventhwalllab/anairyspirit#install');
+    if (args[0] === 'mcp') {
+      const text = notice.unsupportedText(o.sums.version, `${o.platform}/${o.arch}`);
+      return notice.serve(o.stdin || process.stdin, o.stdout || process.stdout, o.sums.version, text);
+    }
     return 1;
   }
   const installed = findInstalled(o.env, o.home, o.self, o.extraDirs);

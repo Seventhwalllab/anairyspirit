@@ -137,6 +137,9 @@ accurate model.
 
 **macOS** — open the disk image and the app; it walks you through setup.
 
+**Windows** — there is no Windows build: run it in Docker Desktop (below), or inside WSL with the npm or
+Linux steps.
+
 **Homebrew** (macOS, Linux):
 
 ```bash
@@ -157,8 +160,10 @@ npx anairyspirit setup
 ```
 
 The package downloads this release's archive for your machine, checks it against the signed
-checksums and runs `setup` from it. Once installed, an AI client can start the program with
-`npx -y anairyspirit mcp`; `npx anairyspirit@latest update` updates it.
+checksums and runs `setup` from it. `setup` asks you to accept the licence — answer `y` — and shows
+a 24-word recovery phrase: write it down. Once installed, an AI client can start the program with
+`npx -y anairyspirit mcp`; `npx anairyspirit@latest update` updates it. (`npm i anairyspirit` only
+adds the launcher, as `anairyspirit-npm`; the install is `npx anairyspirit setup`.)
 
 **Debian, Ubuntu:**
 
@@ -191,17 +196,34 @@ cd anairyspirit-<version>-<arch>
 
 Then open a new terminal, so the shell finds `anairyspirit`.
 
-**Docker** — from GitHub's registry (the same image is on Docker Hub as `seventhwalllab/anairyspirit`):
+**Docker** — from GitHub's registry (the same image is on Docker Hub as `seventhwalllab/anairyspirit`).
+It needs about 5 GB of memory; the first start downloads the models (about 1.5 GB) and takes a few
+minutes. Starting it accepts the licence (`docker exec anairyspirit anairyspirit license` shows it).
 
 ```bash
-docker pull ghcr.io/seventhwalllab/anairyspirit:latest
 docker run -d --name anairyspirit -v anairyspirit-data:/data \
   -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \
   --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
 ```
 
+Then connect an AI client on the same machine — no port, certificate or token:
+
+```json
+{ "command": "docker", "args": ["exec", "-i", "anairyspirit", "anairyspirit", "mcp"] }
+```
+
+Claude Code: `claude mcp add --scope user anairyspirit -- docker exec -i anairyspirit anairyspirit mcp`.
+
+The client gets the memory owner's rights. To give it less, issue a read-only token —
+`docker exec anairyspirit anairyspirit token issue --raw --scope read --name my-agent` — and pass it
+through the client's environment, not its arguments: `"args": ["exec", "-i", "-e", "ANAIRYSPIRIT_BEARER",
+"anairyspirit", "anairyspirit", "mcp"]` with `"env": {"ANAIRYSPIRIT_BEARER": "<token>"}`. The recovery
+phrase: `docker exec -it anairyspirit anairyspirit recovery`. A client on another machine connects
+over the network: `docker exec anairyspirit anairyspirit man install-docker`, «Reaching it from outside
+the container».
+
 The image is signed: `cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:latest`
-with the key from the release page. The first start downloads the models and takes a few minutes.
+with cosign 3 and the key from the release page (cosign 2 answers «no signatures found»).
 
 Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
 key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the

@@ -14,9 +14,16 @@ manifest before anything runs.
 npx anairyspirit setup
 ```
 
-`setup` asks about encryption and the rest, installs the program as
-`anairyspirit` (in `/usr/local/bin`, or `~/.local/bin` — then open a new
+`setup` asks you to accept the licence (answer `y`), asks about encryption and
+the rest, shows a 24-word recovery phrase (write it down), installs the program
+as `anairyspirit` (in `/usr/local/bin`, or `~/.local/bin` — then open a new
 terminal) and starts its service.
+
+`npm i anairyspirit` only adds this launcher (as `anairyspirit-npm`); the
+install is the `npx` line above.
+
+Windows has no build of its own: run anairyspirit in Docker Desktop, or inside
+WSL with the line above — https://github.com/Seventhwalllab/anairyspirit#install
 
 ## Use it from an AI client
 

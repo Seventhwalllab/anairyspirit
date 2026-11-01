@@ -44,6 +44,27 @@ function setupText(version) {
   ].join('\n');
 }
 
+// Windows and anything else without a build: the memory runs in Docker there,
+// or inside WSL (Linux), and the agent should hear that instead of a server
+// that dies before `initialize`. Until 0.1.441 the package refused such a
+// machine through npm's `os` field, so this was never said (public install
+// check of 28.10).
+function unsupportedText(version, platform) {
+  return [
+    `anairyspirit does not run on this system (${platform}) directly: it runs on macOS and Linux.`,
+    '',
+    'Ask the user to run it in Docker (Docker Desktop on Windows):',
+    '',
+    '  docker run -d --name anairyspirit -v anairyspirit-data:/data \\',
+    '    -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \\',
+    `    --restart unless-stopped seventhwalllab/anairyspirit:${version}`,
+    '',
+    'then change this MCP client to start: docker exec -i anairyspirit anairyspirit mcp',
+    '',
+    'Or, inside WSL (Linux on Windows): npx anairyspirit setup — and run the MCP client there.',
+  ].join('\n');
+}
+
 function reply(id, result) {
   return { jsonrpc: '2.0', id, result };
 }
@@ -52,8 +73,9 @@ function failure(id, code, message) {
   return { jsonrpc: '2.0', id, error: { code, message } };
 }
 
-/** One JSON-RPC message in, its response out — null for a notification. */
-function respond(msg, version) {
+/** One JSON-RPC message in, its response out — null for a notification.
+ *  `text` is what the tool says: [`setupText`] by default. */
+function respond(msg, version, text) {
   if (!msg || typeof msg !== 'object' || Array.isArray(msg)) {
     return failure(null, -32600, 'Invalid Request');
   }
@@ -76,7 +98,10 @@ function respond(msg, version) {
     case 'tools/call': {
       const name = params && params.name;
       if (name !== TOOL) return failure(id, -32602, `Unknown tool: ${name}`);
-      return reply(id, { content: [{ type: 'text', text: setupText(version) }], isError: false });
+      return reply(id, {
+        content: [{ type: 'text', text: text || setupText(version) }],
+        isError: false,
+      });
     }
     default:
       return failure(id, -32601, `Method not found: ${method}`);
@@ -84,7 +109,7 @@ function respond(msg, version) {
 }
 
 /** Answer MCP on `input`/`output` until `input` closes; resolves to 0. */
-function serve(input, output, version) {
+function serve(input, output, version, text) {
   return new Promise((resolve) => {
     let buf = '';
     const send = (m) => output.write(`${JSON.stringify(m)}\n`);
@@ -103,7 +128,7 @@ function serve(input, output, version) {
           send(failure(null, -32700, 'Parse error'));
           continue;
         }
-        const out = respond(msg, version);
+        const out = respond(msg, version, text);
         if (out) send(out);
       }
     });
@@ -112,4 +137,4 @@ function serve(input, output, version) {
   });
 }
 
-module.exports = { TOOL, PROTOCOL_VERSIONS, respond, serve, setupText };
+module.exports = { TOOL, PROTOCOL_VERSIONS, respond, serve, setupText, unsupportedText };
