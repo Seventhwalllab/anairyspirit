@@ -42,18 +42,6 @@ reference implementation, which carries a copyleft licence.
 Off unless you turn it on — on our benchmark it ranked worse (see the note at the
 end).
 
-### Associations that form from what gets recalled together
-
-Edges are not only similarity. They also learn from co-activation: things
-recalled in the same breath grow a connection, whether or not their text looks
-alike. This is Hebb's rule, stated in 1949 and still the cleanest description of
-the phenomenon.
-
-> Hebb, D. O. (1949). **The Organization of Behavior: A Neuropsychological
-> Theory.** Wiley.
-
-Off unless you turn it on.
-
 ### Spreading activation
 
 A memory is more interesting if its neighbours are already relevant. Activation

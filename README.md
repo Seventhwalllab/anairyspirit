@@ -289,7 +289,6 @@ requires; the program writes it out when you connect that client.
 | nearest neighbours | HNSW, own implementation (Malkov & Yashunin, 2016) |
 | retrieval | a pipeline of stages you compose in settings, not a fixed recipe: dense similarity, lexical scoring (Okapi BM25), rank fusion, spreading activation over the graph (Collins & Loftus, 1975), community structure, cross-encoder reranking. The default recipe uses four of these, spreading activation among them; the rest are one settings line away |
 | ranking by use | ACT-R base-level activation — what is reached for often stays reachable (Anderson & Schooler, 1991). Opt-in |
-| associations | Hebbian plasticity over co-activation: edges learn from what gets recalled together. Opt-in |
 | consolidation | light and deep sleep cycles; a deep sleep is all or nothing — a failure halfway leaves the memory as it was |
 | time | bi-temporal: the date a thing happened and the date it was recorded are kept apart |
 | entities | GLiNER zero-shot extraction over a rule-based baseline (Zaratiana et al., 2023) |
