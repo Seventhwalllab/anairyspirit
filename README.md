@@ -206,7 +206,8 @@ docker run -d --name anairyspirit -v anairyspirit-data:/data \
   --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
 ```
 
-Then connect an AI client on the same machine — no port, certificate or token:
+Then connect your AI client. It stays on the computer that runs Docker and runs this command, which
+reaches the memory inside the container — no port, certificate or token:
 
 ```json
 { "command": "docker", "args": ["exec", "-i", "anairyspirit", "anairyspirit", "mcp"] }
@@ -214,13 +215,19 @@ Then connect an AI client on the same machine — no port, certificate or token:
 
 Claude Code: `claude mcp add --scope user anairyspirit -- docker exec -i anairyspirit anairyspirit mcp`.
 
-The client gets the memory owner's rights. To give it less, issue a read-only token —
+The client gets the memory owner's rights. Optional: to give it less, issue a read-only token —
 `docker exec anairyspirit anairyspirit token issue --raw --scope read --name my-agent` — and pass it
 through the client's environment, not its arguments: `"args": ["exec", "-i", "-e", "ANAIRYSPIRIT_BEARER",
 "anairyspirit", "anairyspirit", "mcp"]` with `"env": {"ANAIRYSPIRIT_BEARER": "<token>"}`. The recovery
 phrase: `docker exec -it anairyspirit anairyspirit recovery`. A client on another machine connects
 over the network: `docker exec anairyspirit anairyspirit man install-docker`, «Reaching it from outside
 the container».
+
+To update, keep a copy first —
+`docker exec -it anairyspirit anairyspirit export-full --out /data/backup.mehsnap` — then `docker pull`
+the newer image, `docker stop anairyspirit && docker rm anairyspirit`, and the same `docker run` again,
+with every flag you added at the first run. The memory and the models are on the two volumes and stay.
+Details: `docker exec anairyspirit anairyspirit man install-docker`, «Updating».
 
 The image is signed: `cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:latest`
 with cosign 3 and the key from the release page (cosign 2 answers «no signatures found»).
