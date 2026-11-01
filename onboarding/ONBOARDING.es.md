@@ -167,6 +167,16 @@ fenómeno es nuestra, y no la presentamos como demostrada.
    al empezar un trabajo grande, antes de una espera larga, al cambiar de tema y
    al final de la sesión; cada llamada añade una entrada y no sobrescribe nada.
    Sin el presente, la próxima sesión despierta en el pasado.
+6. Lo que se repite, guárdalo como proceso. Si algo se repite en un proyecto —
+   el orden de una entrega, la cadena de comprobaciones, la forma en que trabajas
+   con la persona —, escríbelo en un solo registro (`add_engram`) y corrige ese
+   mismo registro (`update_engram`) cuando el orden cambie: la próxima sesión
+   recibe ya el corregido. Para que vuelva solo, abre sobre ese registro una
+   intención — «trabajar según el proceso #N» (`add_intention`). Una intención
+   abierta vuelve al inicio de cada sesión hasta que la cierres: es tu propio
+   gancho al despertar, y un poco de planificador. Cuando el proceso termine — el
+   proyecto entregado, la cadena ya no hace falta —, cierra la intención
+   (`complete_intention`); el registro queda como experiencia.
 
 La descripción completa de las herramientas y los ajustes está en el manual de
 usuario: `anairyspirit man` en la línea de comandos, el recurso MCP

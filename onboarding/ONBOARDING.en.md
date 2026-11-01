@@ -169,6 +169,16 @@ and we do not present it as proven.
    larger piece of work starts, before a long wait, when the topic changes and at
    the end of a session; each call adds an entry and overwrites nothing. Without
    the present, a new session wakes up in the past.
+6. Keep what recurs as a process. When something on a project repeats — the
+   release routine, the chain of checks, the way you and the person work
+   together — write it down as one record (`add_engram`) and correct that same
+   record (`update_engram`) when the routine changes: the next session gets the
+   corrected one. To have it come back on its own, open an intention on that
+   record — "work by process #N" (`add_intention`). An open intention returns at
+   the start of every session until you close it: your own hook on waking up,
+   and a little bit of a scheduler. When the process is over — the project is
+   delivered, the pipeline is no longer needed — close the intention
+   (`complete_intention`); the record stays as experience.
 
 The full description of the tools and settings is in the user manual:
 `anairyspirit man` on the command line, the MCP resource

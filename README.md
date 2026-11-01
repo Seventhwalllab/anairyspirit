@@ -153,7 +153,7 @@ Homebrew installs a ready-made build, so neither Xcode nor Command Line Tools ar
 `brew tap` clones with git, which has to be 2.24 or newer — an older one fails with
 `unknown option 'end-of-options'`; `which -a git` shows which git comes first in your `PATH`.
 
-**npm** (macOS, Linux; Node 18 or newer):
+**npm** (macOS, Linux; Node 18 or newer, and `curl`, which setup uses to download the models):
 
 ```bash
 npx anairyspirit setup
@@ -164,6 +164,9 @@ checksums and runs `setup` from it. `setup` asks you to accept the licence — a
 a 24-word recovery phrase: write it down. Once installed, an AI client can start the program with
 `npx -y anairyspirit mcp`; `npx anairyspirit@latest update` updates it. (`npm i anairyspirit` only
 adds the launcher, as `anairyspirit-npm`; the install is `npx anairyspirit setup`.)
+
+The packages and the archive for Linux are on the [latest release](https://github.com/Seventhwalllab/anairyspirit/releases/latest)
+page; download the one for your system and architecture, then:
 
 **Debian, Ubuntu:**
 
@@ -232,9 +235,9 @@ Details: `docker exec anairyspirit anairyspirit man install-docker`, «Updating�
 The image is signed: `cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:latest`
 with cosign 3 and the key from the release page (cosign 2 answers «no signatures found»).
 
-Every release carries a GPG-signed checksum manifest (`SHA256SUMS-public.asc`,
-key in [KEYS](KEYS)). The manual ships with each release in `docs/` and inside the
-program: `anairyspirit man`.
+Every release carries a checksum manifest, `SHA256SUMS`, signed with GPG in `SHA256SUMS.asc`
+(key in [KEYS](KEYS)): `gpg --verify SHA256SUMS.asc SHA256SUMS`, then `sha256sum --check --ignore-missing SHA256SUMS`.
+The manual ships with each release in `docs/` and inside the program: `anairyspirit man`.
 
 ## Benchmarks
 

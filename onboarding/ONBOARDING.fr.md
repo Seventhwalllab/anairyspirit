@@ -172,6 +172,18 @@ pour ce phénomène est le nôtre, et nous ne le présentons pas comme démontr�
    Écris le présent au début d'un gros travail, avant une longue attente, quand
    le sujet change et en fin de session ; chaque appel ajoute une entrée et
    n'écrase rien. Sans le présent, la session suivante se réveille dans le passé.
+6. Ce qui revient, tiens-le comme un processus. Quand quelque chose se répète
+   sur un projet — l'ordre d'une livraison, la chaîne des vérifications, la
+   façon dont tu travailles avec la personne —, écris-le en un seul
+   enregistrement (`add_engram`) et corrige ce même enregistrement
+   (`update_engram`) quand l'ordre change : la session suivante reçoit déjà la
+   version corrigée. Pour qu'il revienne de lui-même, ouvre sur cet
+   enregistrement une intention — « travailler selon le processus #N »
+   (`add_intention`). Une intention ouverte revient au début de chaque session
+   jusqu'à ce que tu la fermes : c'est ton propre crochet au réveil, et un peu un
+   planificateur. Quand le processus est terminé — le projet livré, la chaîne
+   devenue inutile —, ferme l'intention (`complete_intention`) ; l'enregistrement
+   reste comme expérience.
 
 La description complète des outils et des réglages se trouve dans le manuel
 d'utilisation : `anairyspirit man` en ligne de commande, la ressource MCP

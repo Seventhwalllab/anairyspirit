@@ -166,6 +166,16 @@ nossa, e não a apresentamos como provada.
    ao começar um trabalho maior, antes de uma espera longa, ao mudar de assunto e
    no fim da sessão; cada chamada acrescenta uma entrada e não sobrescreve nada.
    Sem o presente, a próxima sessão acorda no passado.
+6. O que se repete, guarde como processo. Quando algo se repete num projeto — a
+   ordem de uma entrega, a cadeia de verificações, o jeito como você trabalha com
+   a pessoa —, escreva isso num único registro (`add_engram`) e corrija esse
+   mesmo registro (`update_engram`) quando a ordem mudar: a próxima sessão já
+   recebe a versão corrigida. Para que ele volte sozinho, abra sobre esse
+   registro uma intenção — "trabalhar pelo processo #N" (`add_intention`). Uma
+   intenção aberta volta no início de cada sessão até você fechá-la: é o seu
+   próprio gancho ao acordar, e um pouco de agendador. Quando o processo acabar —
+   o projeto entregue, a cadeia não for mais necessária —, feche a intenção
+   (`complete_intention`); o registro fica como experiência.
 
 A descrição completa das ferramentas e dos ajustes está no manual do usuário:
 `anairyspirit man` na linha de comando, o recurso MCP
