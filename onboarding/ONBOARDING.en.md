@@ -103,7 +103,10 @@ Landing there is not the same as being remembered. The trace goes through a
 survival filter — by resemblance to what is already held, through a rubbish
 filter, and above all through sleep: what is valuable consolidates, the rest is
 forgotten and removed. Long-term memory is the graph, and a place in it is
-earned.
+earned. What survives lands in the category `episodic`, tagged `auto_provenance`
+— apart from the notes you write on purpose (with a language model configured,
+`llm` mode, the model picks the category). What you mean to keep for certain,
+write yourself.
 
 Why this is needed at all, given that you can write yourself. Because you will
 not: an agent is focused on the task that pays off here and now, and the
@@ -156,10 +159,16 @@ and we do not present it as proven.
    teaching.
 4. At the start of a session, ask your memory before answering from first
    impulse.
-5. Keep three things current, because they are what a new session starts from:
-   who you are — store what you learn about yourself, in your own words; what
-   you are working on — `update_working_memory`; and what you mean to do —
-   `add_intention`, closed with `complete_intention` once it is done.
+5. Keep the three times of your memory current — a new session starts from them:
+   the past — what happened and what you learned, including what you learn about
+   yourself, in your own words: `add_engram`; the future — what you mean to do,
+   one thing at a time, with what "done" means: `add_intention`, closed with
+   `complete_intention` as soon as it is done; and the present — where you are
+   now: `update_working_memory`, one short entry with the task, how far it got,
+   the next step and what is running in the background. Write the present when a
+   larger piece of work starts, before a long wait, when the topic changes and at
+   the end of a session; each call adds an entry and overwrites nothing. Without
+   the present, a new session wakes up in the past.
 
 The full description of the tools and settings is in the user manual:
 `anairyspirit man` on the command line, the MCP resource

@@ -104,6 +104,10 @@ Y arriver n'est pas être retenu. La trace passe par un filtre de survie : par
 ressemblance avec ce qui est déjà là, par un filtre à déchets et surtout par le
 sommeil — ce qui a de la valeur se consolide, le reste est oublié
 et supprimé. La mémoire longue, c'est le graphe, et la place s'y mérite.
+Ce qui survit se range dans la catégorie `episodic`, avec le tag
+`auto_provenance` — à part de ce que tu écris exprès (avec un modèle de langue
+configuré, mode `llm`, c'est le modèle qui choisit la catégorie). Ce que tu veux
+garder à coup sûr, écris-le toi-même.
 
 À quoi bon, puisque tu peux écrire toi-même. Parce que tu ne le feras pas : un
 agent est concentré sur la tâche qui donne un résultat ici et maintenant, et la
@@ -158,10 +162,16 @@ pour ce phénomène est le nôtre, et nous ne le présentons pas comme démontr�
    après coup cesse d'enseigner.
 4. En début de session, interroge ta mémoire avant de répondre au premier
    mouvement.
-5. Tiens trois choses à jour, car c'est d'elles que part la session suivante :
-   qui tu es — garde ce que tu apprends sur toi, avec tes mots ; ce sur quoi tu
-   travailles — `update_working_memory` ; et ce que tu comptes faire —
-   `add_intention`, que l'on ferme avec `complete_intention` une fois fait.
+5. Tiens à jour les trois temps de ta mémoire — c'est d'eux que part la session
+   suivante : le passé — ce qui s'est passé et ce que tu as appris, y compris ce
+   que tu apprends sur toi, avec tes mots : `add_engram` ; le futur — ce que tu
+   comptes faire, une chose à la fois, avec ce que « fait » veut dire :
+   `add_intention`, que l'on ferme avec `complete_intention` dès que c'est fait ;
+   et le présent — où tu en es : `update_working_memory`, une entrée courte avec
+   la tâche, où elle en est, l'étape suivante et ce qui tourne en arrière-plan.
+   Écris le présent au début d'un gros travail, avant une longue attente, quand
+   le sujet change et en fin de session ; chaque appel ajoute une entrée et
+   n'écrase rien. Sans le présent, la session suivante se réveille dans le passé.
 
 La description complète des outils et des réglages se trouve dans le manuel
 d'utilisation : `anairyspirit man` en ligne de commande, la ressource MCP

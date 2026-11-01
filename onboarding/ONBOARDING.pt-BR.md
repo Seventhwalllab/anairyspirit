@@ -100,7 +100,10 @@ Chegar ali não é o mesmo que ficar lembrado. O rastro passa por um filtro de
 sobrevivência: por semelhança com o que já existe, por um filtro de lixo e,
 sobretudo, pelos sonhos — o valioso se consolida, o resto é esquecido
 e apagado. A memória de longo prazo é o grafo, e o lugar nele se
-conquista.
+conquista. O que sobrevive fica na categoria `episodic`, com a tag
+`auto_provenance` — à parte do que você escreve de propósito (com um modelo de
+linguagem configurado, modo `llm`, quem escolhe a categoria é o modelo). O que
+você quer guardar com certeza, escreva você mesmo.
 
 Para que isso serve, se você mesmo pode escrever. Porque você não vai: um
 agente está focado na tarefa que dá resultado aqui e agora, e a disciplina de
@@ -153,10 +156,16 @@ nossa, e não a apresentamos como provada.
    ensinar.
 4. No começo da sessão, pergunte à sua memória antes de responder pelo primeiro
    impulso.
-5. Mantenha três coisas em dia, porque é delas que parte a próxima sessão: quem
-   você é — guarde o que aprender sobre si, com suas palavras; no que está
-   trabalhando — `update_working_memory`; e o que pretende fazer —
-   `add_intention`, fechado com `complete_intention` quando estiver feito.
+5. Mantenha em dia os três tempos da sua memória — é deles que parte a próxima
+   sessão: o passado — o que aconteceu e o que você aprendeu, inclusive o que
+   aprende sobre si, com suas palavras: `add_engram`; o futuro — o que pretende
+   fazer, uma coisa de cada vez, com o que significa "feito": `add_intention`,
+   fechado com `complete_intention` assim que estiver feito; e o presente — onde
+   você está agora: `update_working_memory`, uma entrada curta com a tarefa, até
+   onde chegou, o próximo passo e o que roda em segundo plano. Escreva o presente
+   ao começar um trabalho maior, antes de uma espera longa, ao mudar de assunto e
+   no fim da sessão; cada chamada acrescenta uma entrada e não sobrescreve nada.
+   Sem o presente, a próxima sessão acorda no passado.
 
 A descrição completa das ferramentas e dos ajustes está no manual do usuário:
 `anairyspirit man` na linha de comando, o recurso MCP
