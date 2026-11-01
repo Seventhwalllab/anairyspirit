@@ -4,7 +4,7 @@ A personal AI memory graph that runs on your own machine. Your AI agents keep
 long-term memory in it over MCP and REST; nothing leaves the machine.
 
 This package installs it and runs it — macOS and Linux (x86_64, arm64), Node 18
-or newer. It carries no program itself: it downloads the release it was built
+or newer, and `curl` (setup downloads the models with it). It carries no program itself: it downloads the release it was built
 for from GitHub and checks it against the checksums of that release's signed
 manifest before anything runs.
 
