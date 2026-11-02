@@ -98,8 +98,9 @@ found, how long it took, and why the results came out in that order.
 - **On your disk.** Everything lives in one folder. A crash or a power cut loses
   nothing that was already written.
 - **No cloud, no LLM.** Models download once at setup (about 1.5 GB; an offline
-  install is supported). After that nothing leaves the machine. No telemetry. The
-  one exception is yours to make: an optional writeback mode (`llm`, off by default)
+  install is supported). If that download breaks off, the service finishes the
+  entity model in the background; after that nothing leaves the machine. No
+  telemetry. The one exception is yours to make: an optional writeback mode (`llm`, off by default)
   calls a model at the address you give it.
 - **Encrypted if you want it.** Three modes: none; passphrase asked at every start
   and held in memory only; passphrase on disk for unattended boot. Switch between
@@ -253,7 +254,7 @@ The manual ships with each release in `docs/` and inside the program: `anairyspi
 | reasoning about time | 97.6 % | 85.6 % |
 | preferences | 90.0 % | 90.0 % |
 
-Hit@5: a session with the answer is in the top five. Recall@5: the share of all answer sessions found there — some questions need several. Retrieval only: no language model answers and none judges, so this is the benchmark's session-level memory recall, not end-to-end QA accuracy. No large language model takes part in storing, searching or ranking: they run on small local models — an embedding model and a cross-encoder reranker — plus BM25. With the default settings there are no LLM calls, no API, and nothing leaves the machine; the one exception is an optional writeback mode that you switch on and point at a model yourself. LongMemEval-S, questions without an answer excluded; public build 0.1.392 with its default settings.
+Hit@5: a session with the answer is in the top five. Recall@5: the share of all answer sessions found there — some questions need several. Retrieval only: no language model answers and none judges, so this is the benchmark's session-level memory recall, not end-to-end QA accuracy. No large language model takes part in storing, searching or ranking: they run on small local models — an embedding model and a cross-encoder reranker — plus BM25. With the default settings there are no LLM calls, no API, and nothing leaves the machine apart from the model download at setup (if that breaks off, the service finishes the entity model in the background); the one other exception is an optional writeback mode that you switch on and point at a model yourself. LongMemEval-S, questions without an answer excluded; public build 0.1.392 with its default settings.
 
 Benchmark: Wu et al., *LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory* — [arXiv:2410.10813](https://arxiv.org/abs/2410.10813).
 
