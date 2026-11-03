@@ -1,7 +1,8 @@
 # anairyspirit
 
 A personal AI memory graph that runs on your own machine. Your AI agents keep
-long-term memory in it over MCP and REST; apart from the model download at setup,
+long-term memory in it over MCP and REST; apart from the model download at setup
+(if that breaks off, the service finishes the entity model in the background),
 nothing leaves the machine.
 
 This package installs it and runs it — macOS and Linux (x86_64, arm64), Node 18
