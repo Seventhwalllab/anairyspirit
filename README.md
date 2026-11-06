@@ -32,8 +32,8 @@ those. A record of how the agent itself works: where it tends to be wrong, which
 corrections it was given and why, what it decided and what came of it.
 
 The memory is a graph that lives the way memory does. New material settles into
-connections during sleep; what goes unused dims — it is never deleted, and it
-rises again when it is needed, because an approach that was wrong a month ago may
+connections during sleep; connections fade with age, yet nothing is deleted, and a
+memory rises again when it is needed, because an approach that was wrong a month ago may
 be right under today's conditions. Over time the agent comes to hold positions
 rather than a readiness to agree. Our aim — a goal, not a claim — is that
 experience, kept long enough, becomes a self.
