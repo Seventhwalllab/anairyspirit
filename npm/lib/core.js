@@ -181,6 +181,40 @@ async function fetchRelease(sums, opts) {
   return { tmp, dir, program: path.join(dir, 'anairyspirit') };
 }
 
+/**
+ * The version npm calls `latest` for this package, as [major, minor, patch],
+ * or null when it cannot be read (offline, any error, 3 s). `opts.latestVersion`
+ * answers instead, for tests.
+ */
+function latestOnNpm(opts) {
+  if (opts.latestVersion !== undefined) return Promise.resolve(opts.latestVersion);
+  const registry = (process.env.npm_config_registry || 'https://registry.npmjs.org/').replace(/\/?$/, '/');
+  const url = `${registry}anairyspirit/latest`;
+  return new Promise((resolve) => {
+    const mod = url.startsWith('http://') ? http : https;
+    let req;
+    try {
+      req = mod.get(url, { headers: { 'User-Agent': 'anairyspirit-npm', Accept: 'application/json' }, timeout: 3000 }, (res) => {
+        if (res.statusCode !== 200) {
+          res.resume();
+          return resolve(null);
+        }
+        let body = '';
+        res.setEncoding('utf8');
+        res.on('data', (c) => { body += c; });
+        res.on('end', () => {
+          try { resolve(parseVersion(JSON.parse(body).version)); } catch { resolve(null); }
+        });
+        res.on('error', () => resolve(null));
+      });
+    } catch {
+      return resolve(null);
+    }
+    req.on('timeout', () => { req.destroy(); resolve(null); });
+    req.on('error', () => resolve(null));
+  });
+}
+
 /** Run a program with this process's terminal; resolves to its exit code. */
 function run(program, args, cwd) {
   return new Promise((resolve, reject) => {
@@ -235,7 +269,17 @@ async function main(args, opts) {
     const want = parseVersion(o.sums.version);
     if (have && compareVersions(have, want) >= 0) {
       log(`${TAG}: the installed anairyspirit is v${have.join('.')}; this package carries v${o.sums.version} — nothing newer here.`);
-      log('For the newest release:  npx anairyspirit@latest update');
+      // Say what the registry says rather than repeat the command just run:
+      // `npx anairyspirit@latest update` answered «run npx anairyspirit@latest
+      // update» when it was already the newest (N3, public paths 0.1.449).
+      const latest = await latestOnNpm(o);
+      if (!latest) {
+        log('For the newest release:  npx anairyspirit@latest update');
+      } else if (compareVersions(latest, have) > 0) {
+        log(`npm has v${latest.join('.')}; npx used an older copy of this package. Run:  npx anairyspirit@latest update`);
+      } else {
+        log(`v${have.join('.')} is the newest release.`);
+      }
       return 0;
     }
     const r = await fetchRelease(o.sums, o);

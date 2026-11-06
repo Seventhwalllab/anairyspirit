@@ -129,7 +129,7 @@ test('main: update hands the newer release to `update --from`; same version does
   const c = tmpdir();
   const marker = path.join(tmpdir(), 'got');
   fakeProgram(c, `if [ "$1" = --version ]; then echo "Anairyspirit v0.1.1"; else echo "$*" > "${marker}"; fi`);
-  const base = { env: { PATH: c }, home, platform: 'linux', arch: 'x64', self: '/nonexistent/launcher.js', baseUrl, log: () => {}, extraDirs: [] };
+  const base = { env: { PATH: c }, home, platform: 'linux', arch: 'x64', self: '/nonexistent/launcher.js', baseUrl, log: () => {}, extraDirs: [], latestVersion: null };
   try {
     const code = await core.main(['update'], { ...base, sums: { version, files: { [file]: sha } } });
     assert.strictEqual(code, 0);
@@ -229,4 +229,22 @@ test('main: on an unsupported platform `mcp` answers MCP and names Docker', asyn
   const text = msgs[1].result.content[0].text;
   assert.match(text, /docker exec -i anairyspirit anairyspirit mcp/);
   assert.match(text, /WSL/);
+});
+
+test('main: update with nothing newer says what npm has instead of repeating the command', async () => {
+  const c = tmpdir();
+  fakeProgram(c, 'echo "Anairyspirit v0.1.450"');
+  const run = async (latestVersion) => {
+    const lines = [];
+    const code = await core.main(['update'], {
+      sums: { version: '0.1.450', files: {} }, env: { PATH: c }, home: tmpdir(),
+      platform: 'linux', arch: 'x64', self: '/nonexistent/launcher.js', log: (m) => lines.push(m), extraDirs: [],
+      latestVersion,
+    });
+    assert.strictEqual(code, 0);
+    return lines.join('\n');
+  };
+  assert.match(await run([0, 1, 450]), /v0\.1\.450 is the newest release\./);
+  assert.match(await run([0, 1, 451]), /npm has v0\.1\.451; npx used an older copy/);
+  assert.match(await run(null), /For the newest release: {2}npx anairyspirit@latest update/);
 });
