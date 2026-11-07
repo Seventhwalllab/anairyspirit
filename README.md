@@ -66,7 +66,7 @@ built*.
 
 The whole argument, written for the agent itself, is in
 [onboarding/](onboarding/) — in English, Spanish, French, Brazilian Portuguese,
-Russian and Traditional Chinese.
+Russian, Simplified Chinese and Traditional Chinese.
 
 ## What it gives the agent
 
@@ -131,7 +131,7 @@ accurate model.
 |---|---|
 | remembering and searching by meaning | 100+ — multilingual embeddings and reranker |
 | time phrases in a query ("last week", "вчера"), auto-tagging, contradiction cues | English, Russian, German, Spanish, French, Portuguese |
-| the onboarding text for the agent, the licence agreement | English, Spanish, French, Brazilian Portuguese, Russian, Traditional Chinese |
+| the onboarding text for the agent, the licence agreement | English, Spanish, French, Brazilian Portuguese, Russian, Simplified Chinese, Traditional Chinese |
 | the program itself — command line, full-screen console, menu bar, built-in manual | English |
 
 ## Install
