@@ -3095,7 +3095,7 @@ Applies to:
   * native-tls 0.2.18
   * no_std_io2 0.9.4
   * openssl-macros 0.1.1
-  * openssl 0.10.77
+  * openssl 0.10.82
   * serde_spanned 0.6.9
   * socks 0.3.4
   * toml 0.8.23
@@ -10089,7 +10089,7 @@ MIT License
 --------------------------------------------------------------------------------
 
 Applies to:
-  * openssl-sys 0.9.113
+  * openssl-sys 0.9.118
 Copyright (c) 2014 Alex Crichton
 
 Permission is hereby granted, free of charge, to any
