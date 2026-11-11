@@ -153,6 +153,8 @@ anairyspirit setup
 Homebrew installs a ready-made build, so neither Xcode nor Command Line Tools are needed.
 `brew tap` clones with git, which has to be 2.24 or newer — an older one fails with
 `unknown option 'end-of-options'`; `which -a git` shows which git comes first in your `PATH`.
+On an Intel Mac, Homebrew no longer supports the platform and first builds git from source;
+use the disk image there instead.
 
 **npm** (macOS, Linux; Node 18 or newer, and `curl`, which setup uses to download the models):
 
@@ -207,7 +209,7 @@ minutes. Starting it accepts the licence (`docker exec anairyspirit anairyspirit
 ```bash
 docker run -d --name anairyspirit -v anairyspirit-data:/data \
   -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \
-  --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
+  --stop-timeout 30 --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
 ```
 
 Then connect your AI client. It stays on the computer that runs Docker and runs this command, which
@@ -229,7 +231,7 @@ the container».
 
 To update, keep a copy first —
 `docker exec -it anairyspirit anairyspirit export-full --out /data/backup.mehsnap` — then `docker pull`
-the newer image, `docker stop anairyspirit && docker rm anairyspirit`, and the same `docker run` again,
+the newer image, `docker stop -t 30 anairyspirit && docker rm anairyspirit`, and the same `docker run` again,
 with every flag you added at the first run. The memory and the models are on the two volumes and stay.
 Details: `docker exec anairyspirit anairyspirit man install-docker`, «Updating».
 
