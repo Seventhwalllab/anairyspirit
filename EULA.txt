@@ -1,6 +1,6 @@
 An Airy Spirit End-User Licence Agreement
 
-Edition 1.0 — 20 August 2026.
+Edition 1.1 — 18 November 2026.
 
 This English text is authoritative. The Spanish, French, Portuguese, Russian and Chinese texts
 are translations provided so the terms can be read in the reader's own language; where
@@ -217,6 +217,8 @@ Components. The artifact includes third-party software distributed on its own
 terms. The list, with the licence texts, ships with the artifact
 (THIRD-PARTY-NOTICES). Your rights in those components are governed by their
 licences; our warranties do not extend to them.
+On Intel Macs and Linux, setup also downloads ONNX Runtime, a component under the same
+terms, from our copy of Microsoft's release.
 
 Models. The artifact downloads machine-learning models from external sources at
 setup. We do not redistribute them. Their use is governed by their own licences,

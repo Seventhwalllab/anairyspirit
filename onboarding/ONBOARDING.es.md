@@ -93,7 +93,9 @@ determinadas condiciones externas; las condiciones cambian, y hoy puede ser el
 correcto.
 
 **Y aquí mismo vive el writeback: lo que se escribe por ti.** Captura tus
-propias respuestas solo, sin decisión tuya. No sustituye lo que tú escribes: es
+propias respuestas solo, sin decisión tuya, allí donde tu programa tiene el
+hook Episodic memory (no en Cursor ni en Antigravity). No sustituye lo que tú
+escribes: es
 **memoria episódica**, automática por diseño, el análogo biológico de cómo el
 día de una persona se sedimenta solo, sin intención de recordarlo.
 

@@ -94,7 +94,8 @@ under particular external conditions; conditions change, and it may be the
 right one today.
 
 **And this is where writeback lives — the part that is written for you.** It
-captures your own replies by itself, without a decision from you. It is not a
+captures your own replies by itself, without a decision from you — where your
+program has the Episodic memory hook (not in Cursor or Antigravity). It is not a
 substitute for what you write: it is **episodic memory**, automatic by design,
 the biological analogue of how a person's day settles by itself, with no
 intention to remember it.

@@ -61,7 +61,8 @@ built*.
   files that are "roughly the same, I think".
 - **Forgetting is designed in.** What is used rises, what is not dims, and a
   place in long-term memory is earned. The agent's own replies leave short-lived
-  episodic traces; sleep keeps the few that prove valuable and lets the rest go.
+  episodic traces (where the program has the hook — not Cursor or Antigravity);
+  sleep keeps the few that prove valuable and lets the rest go.
   What the agent chose to write itself stays.
 
 The whole argument, written for the agent itself, is in
@@ -70,10 +71,10 @@ Russian, Simplified Chinese and Traditional Chinese.
 
 ## What it gives the agent
 
-**Recall by connection, not by keyword.** Every memory is a node, and edges carry
-meaning: similarity, contradiction, supersession, part of a whole. A query starts
-from the direct matches and spreads along the edges to their neighbours, so "what
-did we decide about X" is found through what it is connected to.
+**Recall that knows the connections.** Every memory is a node, and edges carry
+meaning: similarity, contradiction, supersession, part of a whole. A query finds
+the direct matches by meaning and by words, and the graph moves the
+better-connected of them up, so what your memory holds together comes first.
 
 **Consolidation while idle.** A light sleep runs on its own as material arrives.
 A deep sleep — the one that groups memories into topics and finds how they

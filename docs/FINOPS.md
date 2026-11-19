@@ -54,7 +54,8 @@ program does not offer it.
 
 ## Disk
 
-At this size your memory takes 140–420 MB on disk, and one backup 13–40 MB. The models
+At this size your memory takes 140–420 MB on disk, and one backup about 8–25 MB (since
+0.1.455; earlier versions wrote 13–40 MB). The models
 are downloaded once: about 1.3–1.5 GB.
 
 ## Seeing it on your machine

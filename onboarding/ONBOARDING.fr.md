@@ -95,7 +95,9 @@ prise dans certaines conditions extérieures ; les conditions changent, et elle
 peut être la bonne aujourd'hui.
 
 **Et c'est ici que vit le writeback — ce qui s'écrit à ta place.** Il capte tes
-propres réponses de lui-même, sans décision de ta part. Il ne remplace pas ce
+propres réponses de lui-même, sans décision de ta part — là où ton programme a
+le hook Episodic memory (ce n'est le cas ni de Cursor ni d'Antigravity). Il ne
+remplace pas ce
 que tu écris : c'est la **mémoire épisodique**, automatique par construction,
 l'analogue biologique de la façon dont la journée d'une personne se dépose
 d'elle-même, sans intention de la retenir.

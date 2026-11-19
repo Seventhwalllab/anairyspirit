@@ -91,8 +91,9 @@ determinadas condições externas; as condições mudam, e hoje ela pode ser a
 certa.
 
 **E é aqui que vive o writeback — o que é escrito por você sem você.** Ele
-captura as suas próprias respostas sozinho, sem decisão sua. Não substitui o
-que você escreve: é **memória episódica**, automática por construção, o análogo
+captura as suas próprias respostas sozinho, sem decisão sua — onde o seu
+programa tem o hook Episodic memory (não no Cursor nem no Antigravity). Não
+substitui o que você escreve: é **memória episódica**, automática por construção, o análogo
 biológico de como o dia de uma pessoa se assenta sozinho, sem intenção de
 lembrar.
 

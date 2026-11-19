@@ -1,6 +1,6 @@
 # Contrato de Licença de Usuário Final do An Airy Spirit
 
-**Edição 1.0 — 20 de agosto de 2026.**
+**Edição 1.1 — 18 de novembro de 2026.**
 
 A versão em inglês é a autêntica; esta tradução para o português é fornecida para
 facilitar a leitura. Havendo divergência, prevalece o texto em inglês, salvo se a lei
@@ -234,7 +234,9 @@ sua defesa é quem a concedeu.
 **Componentes.** O artefato inclui software de terceiros distribuído sob condições
 próprias. A lista, com os textos das licenças, é entregue junto com o artefato
 (`THIRD-PARTY-NOTICES`). Seus direitos sobre esses componentes regem-se pelas
-respectivas licenças; nossas garantias não os alcançam.
+respectivas licenças; nossas garantias não os alcançam. Em Macs com processador Intel e
+no Linux, a instalação também baixa o ONNX Runtime, um componente sujeito às mesmas
+condições, a partir da nossa cópia da versão publicada pela Microsoft.
 
 **Modelos.** O artefato baixa modelos de aprendizado de máquina de fontes externas na
 instalação. Nós não os redistribuímos. Seu uso rege-se pelas licenças próprias,
