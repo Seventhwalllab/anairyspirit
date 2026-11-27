@@ -1,9 +1,9 @@
 An Airy Spirit End-User Licence Agreement
 
-Edition 1.1 — 18 November 2026.
+Edition 1.2 — 26 November 2026.
 
-This English text is authoritative. The Spanish, French, Portuguese, Russian and Chinese texts
-are translations provided so the terms can be read in the reader's own language; where
+This English text is authoritative. The Spanish (Latin America), French (Canada),
+Russian and Chinese texts are translations provided so the terms can be read in the reader's own language; where
 they differ from this one, this one governs — unless the law applicable to you provides
 otherwise.
 
@@ -107,6 +107,25 @@ contact@seventhwalllab.com and describe your case: who you are, what you do, and
 you intend to use the artifact. We will tell you which category applies. Until we
 answer, treat yourself as being in the free category; we will bring no claim for
 that period.
+
+  3.5. Territory
+
+The artifact is not offered, supplied or licensed for use in the European Union or the
+European Economic Area, in Northern Ireland, in Brazil or in the Province of Quebec (Canada). No licence under this agreement is granted for use in those
+territories, and we do not conclude commercial agreements for use there. Do not download
+or use the artifact if you are located there.
+
+Temporary use by a natural person whose habitual residence is outside those territories,
+while travelling, is not covered by this restriction.
+
+A commercial agreement with an organisation that has affiliates in those territories
+covers use outside them only.
+
+Sanctions. Nor is the artifact offered, supplied or licensed for use in Cuba, Iran,
+North Korea, Syria, Russia or Belarus, or in the Crimea, Donetsk or Luhansk regions of
+Ukraine, or for use by or on behalf of any person on a sanctions list of the United
+Nations or the United States. The travel exception above does not apply to these places
+and persons.
 
 4. What is yours stays yours
 
@@ -272,6 +291,12 @@ of our liability.
 What is not limited. Nothing in this agreement excludes or limits liability for
 wilful misconduct, gross negligence, fraud, or for death or personal injury.
 
+Who else is protected. The exclusions and limits in this section also protect the
+individual who wrote the artifact, our officers, employees and contractors, and any
+company to which this agreement is transferred under section 13; each of them may rely
+on this section as if it were a party to this agreement. This does not widen what
+cannot be limited under "What is not limited" above.
+
 For consumers. If your law gives you, as a consumer, rights that cannot be
 restricted by agreement, those rights remain yours — this agreement neither removes
 nor replaces them.
@@ -303,6 +328,11 @@ give you that right.
 Edition. The edition of this agreement that accompanied the artifact when you
 received it is the one that applies to your use. New editions apply to artifacts
 obtained after they are published.
+
+Transfer. We may transfer this agreement, together with our rights in the artifact,
+to a company that we control. We will announce the transfer where this agreement is
+published. The transfer does not reduce your rights under this agreement or under the
+law that applies to you.
 
 Trade marks. This agreement grants you no rights in the names "An Airy Spirit" and
 "Seventh Wall Lab". You may call our product by its name when you speak about it; you
