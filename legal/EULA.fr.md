@@ -1,6 +1,8 @@
 # Contrat de licence utilisateur final An Airy Spirit
 
-**Édition 1.1 — 18 novembre 2026.**
+**Édition 1.2 — 26 novembre 2026.**
+
+Version française destinée au Canada, hors Québec.
 
 La version anglaise fait foi ; la présente traduction française est fournie pour la
 commodité de la lecture. En cas de divergence, le texte anglais prévaut, sauf
@@ -116,6 +118,28 @@ faites, et comment vous comptez utiliser l'artefact. Nous vous indiquerons la
 catégorie applicable. Tant que nous n'avons pas répondu, considérez-vous comme
 relevant de la catégorie gratuite ; nous ne formulerons aucune réclamation pour cette
 période.
+
+### 3.5. Territoire
+
+L'artefact n'est ni offert, ni fourni, ni concédé sous licence pour une utilisation dans
+l'Union européenne ou dans l'Espace économique européen, en Irlande du Nord, au Brésil ou dans la province de Québec. Le présent contrat n'accorde
+aucune licence pour une utilisation sur ces territoires, et nous n'y concluons aucun
+contrat commercial. Ne téléchargez pas et n'utilisez pas l'artefact si vous vous y
+trouvez.
+
+L'utilisation temporaire par une personne physique dont la résidence habituelle se
+trouve hors de ces territoires, pendant un voyage, n'est pas visée par cette
+restriction.
+
+Un contrat commercial conclu avec un organisme qui a des entités liées sur ces
+territoires ne couvre que l'utilisation hors de ceux-ci.
+
+Sanctions. L'artefact n'est pas non plus offert, fourni ni concédé sous licence pour une
+utilisation à Cuba, en Iran, en Corée du Nord, en Syrie, en Russie ou en Biélorussie, ni
+dans les régions de Crimée, de Donetsk ou de Louhansk (Ukraine), ni pour une utilisation
+par une personne inscrite sur une liste de sanctions des Nations Unies ou des États-Unis,
+ou pour son compte. L'exception de voyage ci-dessus ne s'applique pas à ces lieux ni à
+ces personnes.
 
 ---
 
@@ -309,6 +333,13 @@ l'étendue de notre responsabilité.
 limite la responsabilité en cas de faute intentionnelle, de faute lourde, de dol, ni
 en cas d'atteinte à la vie ou à l'intégrité physique.
 
+**Qui d'autre est protégé.** Les exclusions et limitations de la présente section
+protègent aussi la personne qui a écrit l'artefact, nos dirigeants, employés et
+prestataires, ainsi que toute société à laquelle le présent contrat est transféré
+conformément à la section 13 ; chacun d'eux peut se prévaloir de la présente section comme
+s'il était partie au présent contrat. Cela n'étend pas ce qui ne peut être limité selon
+« Ce qui n'est pas limité » ci-dessus.
+
 **Pour les consommateurs.** Si votre droit vous reconnaît, en qualité de
 consommateur, des droits qui ne peuvent être limités par contrat, ces droits vous
 restent acquis : le présent contrat ne les supprime ni ne les remplace.
@@ -347,6 +378,11 @@ les règles impératives de votre pays vous le reconnaissent.
 **Édition.** L'édition du présent contrat qui accompagnait l'artefact au moment où
 vous l'avez reçu est celle qui s'applique à votre utilisation. Les nouvelles éditions
 s'appliquent aux artefacts obtenus après leur publication.
+
+**Transfert.** Nous pouvons transférer le présent contrat, avec nos droits sur
+l'artefact, à une société que nous contrôlons. Nous annoncerons le transfert là où le
+présent contrat est publié. Le transfert ne réduit pas vos droits au titre du présent
+contrat ni de la loi qui vous est applicable.
 
 **Marques.** Le présent contrat ne vous confère aucun droit sur les dénominations
 « An Airy Spirit » et « Seventh Wall Lab ». Vous pouvez désigner notre produit par son nom
