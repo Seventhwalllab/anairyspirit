@@ -1,6 +1,6 @@
 # Licence texts
 
-The An Airy Spirit Licence Agreement, **Edition 1.1 (18 November 2026)**, in seven languages.
+The An Airy Spirit Licence Agreement, **Edition 1.2 (26 November 2026)**, in six languages.
 
 Every artifact carries, beside these files, [`LICENSE`](../LICENSE) — the short statement —
 and [`EULA.txt`](../EULA.txt), the English edition in plain text. The files here are the
@@ -11,9 +11,8 @@ same agreement, clause for clause.
 | file | language |
 |---|---|
 | [`EULA.en.md`](EULA.en.md) | English — **authoritative** |
-| [`EULA.es.md`](EULA.es.md) | Español |
-| [`EULA.fr.md`](EULA.fr.md) | Français |
-| [`EULA.pt-BR.md`](EULA.pt-BR.md) | Português (Brasil) |
+| [`EULA.es.md`](EULA.es.md) | Español (América Latina) |
+| [`EULA.fr.md`](EULA.fr.md) | Français (Canada, hors Québec) |
 | [`EULA.zh-Hans.md`](EULA.zh-Hans.md) | 简体中文 |
 | [`EULA.zh-Hant.md`](EULA.zh-Hant.md) | 繁體中文 |
 | [`EULA.ru.md`](EULA.ru.md) | Русский |
@@ -27,6 +26,12 @@ Section 13 makes the edition that came with your artifact the one that applies t
 So an edition is never rewritten in place: a change means a new edition, and artifacts
 already in the world keep the terms they were shipped with.
 
+* **Edition 1.2 — 26 November 2026.** New section 3.5: the artifact is not offered, supplied
+  or licensed for use in the European Union, the European Economic Area, Northern Ireland,
+  Brazil or the Province of Quebec (Canada), nor in the sanctioned countries it lists. The French text is marked as the version for Canada outside Quebec; the English header names the region of each
+  translation. Section 10 now names who else its limits protect (the author, our staff and
+  contractors, a company the agreement is transferred to); section 13 allows the agreement
+  to be transferred to a company we control. Nothing else changed.
 * **Edition 1.1 — 18 November 2026.** Section 8 says that on Intel Macs and Linux setup
   also downloads ONNX Runtime, under the same terms as the other components, from our
   copy of Microsoft's release. In the Chinese texts, the same section no longer says we
