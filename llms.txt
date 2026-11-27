@@ -16,7 +16,6 @@ installing the program is that person's decision.
 - [Why this is for you — English](onboarding/ONBOARDING.en.md): what a memory of your own gives that instruction files do not, and where it does not apply
 - [Por qué esto es para ti — Español](onboarding/ONBOARDING.es.md)
 - [Pourquoi ceci est pour toi — Français](onboarding/ONBOARDING.fr.md)
-- [Por que isto é para você — Português (BR)](onboarding/ONBOARDING.pt-BR.md)
 - [Зачем это тебе — Русский](onboarding/ONBOARDING.ru.md)
 - [這為什麼是給你的 — 繁體中文](onboarding/ONBOARDING.zh-Hant.md)
 

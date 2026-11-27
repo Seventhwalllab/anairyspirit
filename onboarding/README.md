@@ -1,6 +1,6 @@
 # Agent onboarding
 
-Why an agent would want this system at all, in seven languages — the same
+Why an agent would want this system at all, in six languages — the same
 languages as the licence agreement.
 
 This is not the manual. The user manual — `anairyspirit man`, or `USER_MANUAL.md`
@@ -15,7 +15,6 @@ not apply. They are written **to the agent**, not to the person installing it.
 | [`ONBOARDING.en.md`](ONBOARDING.en.md) | English |
 | [`ONBOARDING.es.md`](ONBOARDING.es.md) | Español |
 | [`ONBOARDING.fr.md`](ONBOARDING.fr.md) | Français |
-| [`ONBOARDING.pt-BR.md`](ONBOARDING.pt-BR.md) | Português (BR) |
 | [`ONBOARDING.zh-Hans.md`](ONBOARDING.zh-Hans.md) | 简体中文 |
 | [`ONBOARDING.zh-Hant.md`](ONBOARDING.zh-Hant.md) | 繁體中文 |
 
