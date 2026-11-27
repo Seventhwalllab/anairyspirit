@@ -1,6 +1,6 @@
 # Contrato de Licencia de Usuario Final de An Airy Spirit
 
-**Edición 1.1 — 18 de noviembre de 2026.**
+**Edición 1.2 — 26 de noviembre de 2026.**
 
 La versión en inglés es la auténtica; esta traducción al español se ofrece para
 facilitar la lectura. En caso de discrepancia prevalece el texto en inglés, salvo que
@@ -114,6 +114,25 @@ contact@seventhwalllab.com y describa su caso: quién es, a qué se dedica y có
 piensa usar el artefacto. Le indicaremos qué categoría aplica. Mientras no
 respondamos, considérese en la categoría gratuita; no formularemos reclamo alguno por
 ese período.
+
+### 3.5. Territorio
+
+El artefacto no se ofrece, no se suministra ni se licencia para su uso en la Unión
+Europea ni en el Espacio Económico Europeo, ni en Irlanda del Norte, ni en Brasil, ni en la provincia de Quebec (Canadá). Este contrato no otorga licencia alguna para
+el uso en esos territorios, y no celebramos contratos comerciales para su uso allí. No
+descargue ni use el artefacto si se encuentra en ellos.
+
+El uso temporal por una persona natural cuya residencia habitual está fuera de esos
+territorios, mientras viaja, no queda comprendido en esta restricción.
+
+Un contrato comercial con una organización que tiene entidades relacionadas en esos
+territorios cubre solo el uso fuera de ellos.
+
+Sanciones. Tampoco se ofrece, suministra ni licencia el artefacto para su uso en Cuba,
+Irán, Corea del Norte, Siria, Rusia o Bielorrusia, ni en las regiones de Crimea, Donetsk
+o Lugansk (Ucrania), ni para su uso por una persona incluida en una lista de sanciones de
+las Naciones Unidas o de los Estados Unidos, o en su nombre. La excepción por viaje
+indicada arriba no se aplica a esos lugares ni a esas personas.
 
 ---
 
@@ -301,6 +320,12 @@ nuestra responsabilidad.
 por dolo, culpa grave, fraude, ni por daños a la vida o a la integridad de las
 personas.
 
+**Quién más queda protegido.** Las exclusiones y los límites de esta sección protegen
+también a la persona que escribió el artefacto, a nuestros administradores, empleados y
+contratistas, y a cualquier sociedad a la que se transfiera este contrato conforme a la
+sección 13; cada uno de ellos puede invocar esta sección como si fuera parte de este
+contrato. Esto no amplía lo que no puede limitarse según «Lo que no se limita».
+
 **Para consumidores.** Si su ley le reconoce, como consumidor, derechos que no pueden
 limitarse por contrato, esos derechos siguen siendo suyos: este contrato no los
 suprime ni los reemplaza.
@@ -339,6 +364,11 @@ imperativas de su país se lo reconozcan.
 **Edición.** A su uso se aplica la edición de este contrato que acompañaba al
 artefacto en el momento en que usted lo recibió. Las ediciones nuevas se aplican a
 los artefactos obtenidos después de su publicación.
+
+**Transferencia.** Podemos transferir este contrato, junto con nuestros derechos sobre el
+artefacto, a una sociedad que controlemos. Anunciaremos la transferencia donde se publica
+este contrato. La transferencia no reduce sus derechos conforme a este contrato ni
+conforme a la ley que le sea aplicable.
 
 **Marcas.** Este contrato no le confiere derecho alguno sobre las denominaciones
 "An Airy Spirit" y "Seventh Wall Lab". Puede llamar a nuestro producto por su nombre
