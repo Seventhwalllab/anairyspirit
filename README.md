@@ -205,10 +205,11 @@ Then open a new terminal, so the shell finds `anairyspirit`.
 
 **Docker** — from GitHub's registry (the same image is on Docker Hub as `seventhwalllab/anairyspirit`).
 It needs about 5 GB of memory; the first start downloads the models (about 1.5 GB) and takes a few
-minutes. Starting it accepts the licence (`docker exec anairyspirit anairyspirit license` shows it).
+minutes. It starts only with the licence accepted: `-e ANAIRYSPIRIT_ACCEPT_EULA=yes` says you accept it
+(`docker exec anairyspirit anairyspirit license` shows it); without it the container stops and restarts.
 
 ```bash
-docker run -d --name anairyspirit -v anairyspirit-data:/data \
+docker run -d --name anairyspirit -e ANAIRYSPIRIT_ACCEPT_EULA=yes -v anairyspirit-data:/data \
   -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \
   --stop-timeout 30 --restart unless-stopped ghcr.io/seventhwalllab/anairyspirit:latest
 ```
@@ -233,7 +234,8 @@ the container».
 To update, keep a copy first —
 `docker exec -it anairyspirit anairyspirit export-full --out /data/backup.mehsnap` — then `docker pull`
 the newer image, `docker stop -t 30 anairyspirit && docker rm anairyspirit`, and the same `docker run` again,
-with every flag you added at the first run. The memory and the models are on the two volumes and stay.
+with every flag you added at the first run — and `-e ANAIRYSPIRIT_ACCEPT_EULA=yes`, if that run was
+before 0.1.470 and did not have it. The memory and the models are on the two volumes and stay.
 Details: `docker exec anairyspirit anairyspirit man install-docker`, «Updating».
 
 The image is signed: `cosign verify --key anairyspirit-release.pub ghcr.io/seventhwalllab/anairyspirit:latest`
