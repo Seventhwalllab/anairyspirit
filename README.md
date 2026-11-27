@@ -206,7 +206,8 @@ Then open a new terminal, so the shell finds `anairyspirit`.
 **Docker** — from GitHub's registry (the same image is on Docker Hub as `seventhwalllab/anairyspirit`).
 It needs about 5 GB of memory; the first start downloads the models (about 1.5 GB) and takes a few
 minutes. It starts only with the licence accepted: `-e ANAIRYSPIRIT_ACCEPT_EULA=yes` says you accept it
-(`docker exec anairyspirit anairyspirit license` shows it); without it the container stops and restarts.
+(`docker run --rm ghcr.io/seventhwalllab/anairyspirit:latest license` shows it first); without it the
+container stops and restarts.
 
 ```bash
 docker run -d --name anairyspirit -e ANAIRYSPIRIT_ACCEPT_EULA=yes -v anairyspirit-data:/data \
