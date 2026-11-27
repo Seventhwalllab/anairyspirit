@@ -48,16 +48,22 @@ function setupText(version) {
 // or inside WSL (Linux), and the agent should hear that instead of a server
 // that dies before `initialize`. Until 0.1.441 the package refused such a
 // machine through npm's `os` field, so this was never said (public install
-// check of 28.10).
+// check of 28.10). Since 0.1.470 the image starts only with
+// ANAIRYSPIRIT_ACCEPT_EULA=yes; without it the container restarts in a loop,
+// so the command carries it and the text says what it means.
 function unsupportedText(version, platform) {
   return [
     `anairyspirit does not run on this system (${platform}) directly: it runs on macOS and Linux.`,
     '',
-    'Ask the user to run it in Docker (Docker Desktop on Windows):',
+    'Ask the user to run it in Docker (Docker Desktop on Windows). The container starts only',
+    'with the licence agreement accepted: ANAIRYSPIRIT_ACCEPT_EULA=yes says the user accepts it',
+    '(https://github.com/Seventhwalllab/anairyspirit/blob/main/EULA.txt), so let them read it first:',
     '',
-    '  docker run -d --name anairyspirit -v anairyspirit-data:/data \\',
-    '    -v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit \\',
-    `    --restart unless-stopped seventhwalllab/anairyspirit:${version}`,
+    // One line: the reader is on Windows, where PowerShell and cmd do not
+    // continue a line with `\`.
+    '  docker run -d --name anairyspirit -e ANAIRYSPIRIT_ACCEPT_EULA=yes -v anairyspirit-data:/data ' +
+      '-v anairyspirit-models:/home/anairyspirit/.cache/anairyspirit --stop-timeout 30 ' +
+      `--restart unless-stopped seventhwalllab/anairyspirit:${version}`,
     '',
     'then change this MCP client to start: docker exec -i anairyspirit anairyspirit mcp',
     '',

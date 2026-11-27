@@ -228,6 +228,13 @@ test('main: on an unsupported platform `mcp` answers MCP and names Docker', asyn
   assert.strictEqual(msgs[0].result.serverInfo.name, 'anairyspirit');
   const text = msgs[1].result.content[0].text;
   assert.match(text, /docker exec -i anairyspirit anairyspirit mcp/);
+  // Without the variable the 0.1.470 image refuses to start and restarts.
+  assert.match(text, /docker run -d --name anairyspirit -e ANAIRYSPIRIT_ACCEPT_EULA=yes /);
+  // One line, for PowerShell and cmd: no `\` continuation.
+  const run = text.split('\n').find((l) => l.includes('docker run'));
+  assert.ok(!run.includes('\\'), run);
+  assert.match(run, /--stop-timeout 30 .*seventhwalllab\/anairyspirit:0\.1\.441$/);
+  assert.match(text, /EULA\.txt/);
   assert.match(text, /WSL/);
 });
 
